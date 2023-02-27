@@ -4,5 +4,5 @@ class Movie < ApplicationRecord
   validates :title, presence: true
   validates :cast, presence: true
   validates :genre, presence: true
-  validates :synopsis, presence: true, length: { minimim: 10 }
+  validates :synopsis, presence: true, length: { minimum: 10 }
 end
