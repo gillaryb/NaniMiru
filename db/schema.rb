@@ -16,7 +16,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_27_063054) do
 
   create_table "movies", force: :cascade do |t|
     t.string "title"
-    t.text "synposis"
+    t.string "synopsis"
     t.string "cast"
     t.string "genre"
     t.integer "rating"
