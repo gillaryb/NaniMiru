@@ -31,7 +31,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_27_063054) do
     t.datetime "updated_at", null: false
   end
 
-
   create_table "swipes", force: :cascade do |t|
     t.integer "status"
     t.bigint "user_id", null: false
