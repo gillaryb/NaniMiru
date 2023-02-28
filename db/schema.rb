@@ -14,6 +14,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_28_061000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "memberships", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "party_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["party_id"], name: "index_memberships_on_party_id"
+    t.index ["user_id"], name: "index_memberships_on_user_id"
+  end
+
   create_table "movies", force: :cascade do |t|
     t.string "title"
     t.string "synopsis"
@@ -32,7 +41,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_28_061000) do
   end
 
   create_table "swipes", force: :cascade do |t|
-    t.integer "status"
+    t.integer "status", default: 0
     t.bigint "user_id", null: false
     t.bigint "movie_id", null: false
     t.bigint "party_id", null: false
@@ -55,6 +64,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_28_061000) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "memberships", "parties"
+  add_foreign_key "memberships", "users"
   add_foreign_key "swipes", "movies"
   add_foreign_key "swipes", "parties"
   add_foreign_key "swipes", "users"

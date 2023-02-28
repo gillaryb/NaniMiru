@@ -26,3 +26,17 @@ Movie.create!(title: "Bill & Ted's Excellent Adventure", synopsis: "Two rock-'n-
 Movie.create!(title: "Seven", synopsis: "Two detectives, a rookie and a veteran, hunt a serial killer who uses the seven deadly sins as his motives.", cast: "Morgan Freeman, Brad Pitt, Kevin Spacey", genre: "drama", rating: 8.6)
 Movie.create!(title: "Lion", synopsis: "A five-year-old Indian boy is adopted by an Australian couple after getting lost hundreds of kilometers from home. 25 years later, he sets out to find his lost family.", cast: "Dev Patel, Nicole Kidman, Rooney Mara", genre: "drama", rating: 8.0)
 Movie.create!(title: "Spirited Away", synopsis: "During her family's move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into beasts.", cast: "Rumi Hiiragi, Miyu Irino, Mari Natsuki", genre: "anime", rating: 8.6)
+
+puts "getting the parties started"
+jims = Party.create!(name: "jim's party")
+anris = Party.create!(name: "anri's party")
+chieris = Party.create!(name: "chieri's party")
+gilarys = Party.create!(name: "gilary's party")
+
+puts "populating them"
+
+Membership.create!(party: gilarys, user: gilary)
+Membership.create!(party: gilarys, user: anri)
+Membership.create!(party: gilarys, user: chieri)
+Membership.create!(party: gilarys, user: jim)
+Membership.create!(party: jims, user: jim)
