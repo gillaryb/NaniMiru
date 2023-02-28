@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
   def index
-    @movies = Movie.all
+    @movies = policy_scope(Movie)
   end
 end
