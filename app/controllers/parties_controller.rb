@@ -1,11 +1,12 @@
 class PartiesController < ApplicationController
 
   def index
-    @parties = Party.all
+    @parties = policy_scope(Party)
   end
 
   def new
     @party = Party.new
+    authorize @party
   end
 
   def create

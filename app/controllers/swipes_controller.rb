@@ -4,6 +4,7 @@ class SwipesController < ApplicationController
     @user = User.find(params[:user_id])
     @party = Party.find(params[:party_id])
     @swipe = Swipe.new
+    authorize @swipe
   end
 
   def create
@@ -11,5 +12,6 @@ class SwipesController < ApplicationController
     @swipe.movie = @movie
     @swipe.party = @party
     @swipe.user = current_user
+    authorize @swipe
   end
 end
