@@ -1,11 +1,11 @@
 <%= simple_form_for [@party] do |f| %>
-  <%= f.input :name ,label: "Group name"%>
-  <%= f.input :online,
+  <%= f.input :name , label: "Group name" %>
+  <%= f.input :online, label: "which",
             as: :radio_buttons,
             collection_wrapper_tag: 'div',
             collection_wrapper_class: 'category-wrapper',
             item_wrapper_class: 'category-item',
             input_html: {class: 'category-selector'},
             collection: Party::ONLINE %>
-  <%= f.submit 'Submit', class: 'btn btn-ghost mt-2' %>
+  <%= f.submit 'Create a watch party', class: 'btn btn-ghost mt-5' %>
 <% end %>
