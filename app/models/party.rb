@@ -1,5 +1,4 @@
 class Party < ApplicationRecord
-  belongs_to :user
   has_many :memberships, dependent: :destroy
   has_many :swipes, dependent: :destroy
   has_many :users, through: :memberships
