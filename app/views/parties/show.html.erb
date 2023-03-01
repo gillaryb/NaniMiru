@@ -1,0 +1,28 @@
+
+<h1 class="text-center">Today's Watch party</h1>
+<div class="container">
+  <h1 class="text-center"><%= @party.name %></h1>
+  <% @party.users.each do |user| %>
+  <div>
+    <i class="fas fa-user-circle"></i>
+    <p><%= user.name %></p>
+  </div>
+  <% end %>
+  <h3 class="text-center">Do you want to invite your friends ?
+Share the link with your party</h3>
+<%= party_url(@party) %>
+
+<div class="groupshow">
+  <ul class="menu">
+    <a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+    <%= link_to root_path, class:"text-decoration-none" do %>
+    <i class="fa-brands fa-line"></i>
+    <% end %>
+    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+  </ul>
+  <p class="copyright">
+    &copy; Powered by Le Wagon
+  </p>
+</div>
+
+</div>
