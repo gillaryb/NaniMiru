@@ -4,9 +4,6 @@ class PartiesController < ApplicationController
     @parties = policy_scope(Party)
   end
 
-
-
-
   def new
     @party = Party.new
     authorize @party
