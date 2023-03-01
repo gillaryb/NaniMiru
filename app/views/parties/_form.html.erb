@@ -1,11 +1,12 @@
-<%= simple_form_for [@party] do |f| %>
-  <%= f.input :name ,label: "Group name"%>
+<%= simple_form_for [@party],  html: { class: "mb-5"}  do |f| %>
+  <%= f.input :name ,label: "Group name", placeholder: 'Enter a group name ', input_html: { class: "p-2"} %>
   <%= f.input :online,
+            label: "Choose between",
             as: :radio_buttons,
             collection_wrapper_tag: 'div',
             collection_wrapper_class: 'category-wrapper',
             item_wrapper_class: 'category-item',
             input_html: {class: 'category-selector'},
-            collection: Party::ONLINE %>
-  <%= f.submit 'Submit', class: 'btn btn-ghost mt-2' %>
+            collection: Party::ONLINE%>
+  <%= f.submit 'Create', class: 'button bg-transparent text-uppercase mt-5' %>
 <% end %>

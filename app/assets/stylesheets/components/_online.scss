@@ -19,15 +19,17 @@
   box-sizing: border-box;
   width: 100%;
   font-size: 12px;
-  text-align: left;
-  padding: 10px 10px 30px 10px;
+  color: black !important;
+  border-radius: 16px;
+  padding: 20px 10px;
+  text-align: center;
   border: 1px solid #EAEAEA;
-  border-radius: 4px;
   background-color: white;
 }
 
 .category-selector:checked + label {
   color: white !important;
+  background-color: black;
 }
 
 
