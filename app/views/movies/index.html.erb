@@ -1,6 +1,7 @@
 <div class="container">
   <% @movies.each do |movie| %>
     <p><%= movie.title %></p>
+    <p><%= image_tag movie.poster_url %></p>
     <%= render 'swipes/form', swipe: @swipe, party: @party, movie: movie %>
   <% end %>
 </div>
