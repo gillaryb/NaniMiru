@@ -2,4 +2,17 @@
   cursor: pointer;
 }
 
+.container {
+  height: calc(100vh - 50px);
+}
 
+.header-top{
+
+  hr{
+    border: 2px solid #FFFFFF;
+  }
+
+  .header-top-pink{
+    color: #F30AB2;
+  }
+}

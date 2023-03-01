@@ -5,6 +5,10 @@ class PartyPolicy < ApplicationPolicy
       scope.all
     end
   end
+
+  def new?
+    true
+  end
   
   def show?
     record.users.include? user

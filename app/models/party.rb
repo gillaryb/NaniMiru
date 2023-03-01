@@ -1,6 +1,6 @@
 class Party < ApplicationRecord
 
-  ONLINE = [true, false]
+  ONLINE = ["In person", "Remote"]
 
   has_many :memberships, dependent: :destroy
   has_many :swipes, dependent: :destroy
