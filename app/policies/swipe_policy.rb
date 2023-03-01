@@ -9,4 +9,9 @@ class SwipePolicy < ApplicationPolicy
   def create?
     true
   end
+
+  def show?
+    # record.user == user
+    true
+  end
 end

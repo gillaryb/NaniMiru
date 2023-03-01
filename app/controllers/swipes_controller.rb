@@ -17,6 +17,11 @@ class SwipesController < ApplicationController
     redirect_to party_movies_path(@party)
   end
 
+  def show
+    @swipe = Swipe.find(params[:id])
+    @party = Party.find(params[:party_id])
+    authorize @swipe
+  end
   private
 
   def swipe_params
