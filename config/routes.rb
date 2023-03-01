@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :parties, only: %i[index new create show] do
     resources :swipes, only: %i[create show]
+    member do
+      get 'swipe', to: 'parties#swipe'
+    end
     resources :movies, only: %i[index]
   end
 end
