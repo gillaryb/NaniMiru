@@ -19,11 +19,15 @@ class PartiesController < ApplicationController
     end
   end
 
+  def show
+    @party = Party.find(params[:id])
+    authorize @party
+  end
+
   private
 
   def party_params
     params.require(:party).permit(:name, :online)
   end
-
 
 end
