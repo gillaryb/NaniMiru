@@ -1,10 +1,10 @@
 puts "adding users"
 User.destroy_all
 Movie.destroy_all
-chieri = User.create!(email: "kiichieri@gmail.com", password: "123123")
-gilary = User.create(email: "gilarybacnis@gmail.com", password: "123123")
-anri = User.create(email: "anto199309@gmail.com", password: "123123")
-jim = User.create(email: "james.deeth@gmail.com", password: "123123")
+chieri = User.create!(email: "kiichieri@gmail.com", password: "123123", name:"chieri")
+gilary = User.create(email: "gilarybacnis@gmail.com", password: "123123",name:"Gilary")
+anri = User.create(email: "anto199309@gmail.com", password: "123123",name:"Anri")
+jim = User.create(email: "james.deeth@gmail.com", password: "123123",name:"Jim")
 
 puts "adding Movies"
 Movie.create!(title: "Dr. Strangelove", synopsis: "A 1964 satirical black comedy film that satirizes the Cold War fears of a nuclear conflict between the Soviet Union and the United States.", cast: "Peter Sellers, George C. Scott", genre: "comedy", rating: 8.9)
