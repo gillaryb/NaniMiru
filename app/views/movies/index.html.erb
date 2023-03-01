@@ -1,11 +1,11 @@
 <div class="container text-center">
   <div class="border-top border-bottom mt-3 mb-3">
-    <h1 class="mt-3">SWIPE</h1>
-    <h1>MOVIE YOU LIKE</h1>
+    <h1 class="swipe-h3 mt-3">SWIPE MOVIE YOU LIKE</h1>
+
   </div>
   <div>
     <% @movies.each do |movie| %>
-      <div class="blog">
+      <div class="swipe-card mt-3">
         <div class="title-box">
           <h3><%= movie.title %></h3>
           <%= render 'swipes/form', swipe: @swipe, party: @party, movie: movie %>
@@ -13,4 +13,3 @@
       </div>
     <% end %>
   </div>
-

@@ -1,14 +1,12 @@
 
-
 body{
-
   padding-bottom: 4em;
 }
 
-.blog{
+.swipe-card{
   position: relative;
-  width: 22em;
-  height: 30em;
+  width: 339px;
+  height: 432px;
 
   background: url(https://play-lh.googleusercontent.com/L4ZTdaVKsFIWH9hkT-WVoi3pAxZl-72UDQHjb1iojz-im49gKtGHdqESIQLgC-_9PUw=w240-h480-rw) no-repeat;
   background-size: 22em 30em;
@@ -17,12 +15,12 @@ body{
   -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
   overflow: hidden;
 }
-.blog *{
+.swipe-card *{
   position: relative;
   z-index: 2;
 }
 
-.blog, .color-overlay{
+.swipe-card, .color-overlay{
   border-radius: 0.7em;
 }
 .color-overlay{
