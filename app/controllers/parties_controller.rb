@@ -21,7 +21,7 @@ class PartiesController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-  
+
   def show
     @party = Party.find(params[:id])
     authorize @party
