@@ -10,7 +10,6 @@ body {
   justify-content: center;
   height: 100%;
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
   color: #FFFF;
 
@@ -27,8 +26,6 @@ body {
 }
 
 .header-below{
-  position:absolute;
-  bottom: -700px;
   text-transform: uppercase;
   letter-spacing: 2px;
 }

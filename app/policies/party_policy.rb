@@ -9,8 +9,12 @@ class PartyPolicy < ApplicationPolicy
   def new?
     true
   end
-  
+
   def show?
     record.users.include? user
+  end
+
+  def create?
+    true
   end
 end
