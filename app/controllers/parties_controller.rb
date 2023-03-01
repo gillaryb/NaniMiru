@@ -4,6 +4,9 @@ class PartiesController < ApplicationController
     @parties = policy_scope(Party)
   end
 
+
+
+
   def new
     @party = Party.new
     authorize @party
@@ -18,12 +21,16 @@ class PartiesController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+  
+  def show
+    @party = Party.find(params[:id])
+    authorize @party
+  end
 
   private
 
   def party_params
     params.require(:party).permit(:name, :online)
   end
-
 
 end
