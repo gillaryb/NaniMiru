@@ -112,11 +112,56 @@ body{
 }
 
 .icon-holder span, h3{
-  color: #aCcff0;
+  color: #f2f4f7;
 }
 
 space{
   display: inline-block;
   width: 0.6em;
   height: 1em;
+}
+
+
+.btn-like {
+  color: #F30AB2;
+  border: 6px solid #F30AB2;
+  position: relative;
+  bottom: -279px;
+  left: -97px;
+  border-radius:15px;
+  padding: 25px 10px;
+  font-size: 18px;
+  letter-spacing:5px;
+  text-decoration:none;
+  cursor: pointer;
+  font-weight: bold;
+  filter: drop-shadow(0 0 15px #F30AB2) drop-shadow(0 0 50px #F30AB2) contrast(2) brightness(1);
+  transition: .5s;
+  &:hover {
+    color: black;
+    background-color: #F30AB2;
+    filter: drop-shadow(0 0 20px #F30AB2) contrast(2) brightness(2);
+  }
+}
+
+.btn-dislike {
+  color: #F30AB2;
+  border: 6px solid #F30AB2;
+  position: relative;
+  bottom: -174px;
+  left: 98px;
+  border-radius: 15px;
+  padding: 26px 12px;
+  font-size: 18px;
+  letter-spacing:5px;
+  text-decoration:none;
+  cursor: pointer;
+  font-weight: bold;
+  filter: drop-shadow(0 0 15px #F30AB2) drop-shadow(0 0 50px #F30AB2) contrast(2) brightness(1);
+  transition: .5s;
+  &:hover {
+    color: black;
+    background-color: #F30AB2;
+    filter: drop-shadow(0 0 20px #F30AB2) contrast(2) brightness(2);
+  }
 }

@@ -4,12 +4,12 @@
     <%= simple_form_for [party, swipe] do |f| %>
       <%= f.input :movie_id, as: :hidden, input_html: { value: movie.id } %>
       <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
-      <%= f.submit 'would', class: 'btn btn-success' %>
+      <%= f.submit 'LIKE', class: 'btn btn-like' %>
     <% end %>
     <%= simple_form_for [party, swipe] do |f| %>
       <%= f.input :movie_id, as: :hidden, input_html: { value: movie.id } %>
       <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
-      <%= f.submit 'would not', class: 'btn btn-light' %>
+      <%= f.submit 'LIKE', class: 'btn-dislike' %>
     <% end %>
   </div>
 </div>
