@@ -30,9 +30,19 @@ chieris = Party.create!(name: "chieri's party")
 gilarys = Party.create!(name: "gilary's party")
 
 puts "populating them"
-
 Membership.create!(party: gilarys, user: gilary)
 Membership.create!(party: gilarys, user: anri)
 Membership.create!(party: gilarys, user: chieri)
 Membership.create!(party: gilarys, user: jim)
 Membership.create!(party: jims, user: jim)
+
+puts "making a match"
+Swipe.create!(party: gilarys, user: gilary, movie: Movie.last, status: 1)
+Swipe.create!(party: gilarys, user: anri, movie: Movie.last, status: 1)
+Swipe.create!(party: gilarys, user: chieri, movie: Movie.last, status: 1)
+Swipe.create!(party: gilarys, user: jim, movie: Movie.last, status: 1)
+
+5.times do
+  Swipe.create!(party: gilarys, user: gilary, movie: Movie.all.sample, status: 1)
+  Swipe.create!(party: gilarys, user: anri, movie: Movie.all.sample, status: 1)
+end
