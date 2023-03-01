@@ -6,5 +6,5 @@
 <%= simple_form_for [party, swipe] do |f| %>
   <%= f.input :movie_id, as: :hidden, input_html: { value: movie.id } %>
   <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
-  <%= f.submit 'would not', class: 'btn btn-light' %>
+  <%= f.submit 'would not', class: 'btn btn-danger' %>
 <% end %>
