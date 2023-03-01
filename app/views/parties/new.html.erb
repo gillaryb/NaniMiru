@@ -1,17 +1,15 @@
-<div class="container mt-3 text-center">
-  <h1>CREATE</h1>
-  <h1>A WATCH PARTY</h1>
-  <%= render 'parties/form', party: @party %>
-
-  <%# <%= simple_form_for [@party] do |f| %>
-    <%# <%= f.input :online,
-            as: :radio_buttons,
-            collection_wrapper_tag: 'div',
-            collection_wrapper_class: 'category-wrapper',
-            item_wrapper_class: 'category-item',
-            input_html: {class: 'category-selector'},
-            collection: Party::ONLINE %>
-  <%# <% end %>  
-
-  <h2>Share the link with your party</h2>
+<div class="container">
+  <div class="main-homepage">
+    <div class="header-top my-5">
+      <hr>
+      <div class="header-top-text">
+        <h1>CREATE</h1>
+        <div class="header-top-pink">
+          <h1>A WATCH PARTY</h1>
+        </div>
+        <hr>
+      </div>
+    </div>
+    <%= render 'parties/form', party: @party %>
+  </div>
 </div>

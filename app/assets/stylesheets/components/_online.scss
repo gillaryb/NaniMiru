@@ -6,7 +6,16 @@
 
 .category-item {
   flex: 0 0 30%;
+  flex: 0 0 30%;
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
 }
+
 
 .category-selector {
   position: absolute;
@@ -19,15 +28,17 @@
   box-sizing: border-box;
   width: 100%;
   font-size: 12px;
-  text-align: left;
-  padding: 10px 10px 30px 10px;
+  color: black !important;
+  border-radius: 16px;
+  padding: 20px 10px;
+  text-align: center;
   border: 1px solid #EAEAEA;
-  border-radius: 4px;
   background-color: white;
 }
 
 .category-selector:checked + label {
   color: white !important;
+  background-color: black;
 }
 
 

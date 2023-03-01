@@ -5,12 +5,27 @@ body {
 
 .main-homepage{
   position: relative;
+  text-align: center;
+  padding: 16px 24px;
+  justify-content: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: #FFFF;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+
+  label, legend {
+    margin-bottom: 16px;
+  }
 }
 
 .header-below{
-  position:absolute;
-  bottom: -700px;
-  left: 50px;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
@@ -31,11 +46,12 @@ body {
   font-weight: bold;
   filter: drop-shadow(0 0 15px #F30AB2) drop-shadow(0 0 50px #F30AB2) contrast(2) brightness(1);
   transition: .5s;
+  font-family: tahoma;
 
 
   &:hover {
     color: black;
     background-color: #F30AB2;
-    filter: drop-shadow(0 0 20px #F30AB2) contrast(2) brightness(2);
+    filter: drop-shadow(0 0 20px #F30AB2) contrast(2) brightness(1);
   }
 }

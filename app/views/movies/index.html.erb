@@ -1,11 +1,18 @@
-<div class="container">
-  <% @movies.each do |movie| %>
-    <p><%= movie.title %></p>
-    <p><%= image_tag movie.poster_url %></p>
-    <%= render 'swipes/form', swipe: @swipe, party: @party, movie: movie %>
-  <% end %>
-</div>
-
+<div class="container text-center">
+  <div class="border-top border-bottom mt-3 mb-3">
+    <h1 class="mt-3">SWIPE</h1>
+    <h1>MOVIE YOU LIKE</h1>
+  </div>
+  <div>
+    <% @movies.each do |movie| %>
+      <div class="blog">
+        <div class="title-box">
+          <h3><%= movie.title %></h3>
+          <%= render 'swipes/form', swipe: @swipe, party: @party, movie: movie %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 
 <div>
   <iframe width="auto" height="auto" src="https://www.youtube.com/embed/crhL1eOjf4U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

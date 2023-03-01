@@ -11,6 +11,7 @@ class PartiesController < ApplicationController
 
   def create
     @party = Party.new(party_params)
+    authorize @party
     if @party.save
       Membership.create(user: current_user, party: @party)
       redirect_to party_path(@party)
