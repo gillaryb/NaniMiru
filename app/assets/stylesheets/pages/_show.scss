@@ -1,0 +1,40 @@
+.party-members{
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 24px;
+  background: white;
+  color: black;
+  border-radius: 50px;
+
+  span{
+    font-size: 30px;
+  }
+
+  p{
+    font-size: 18px;
+  }
+}
+
+
+.share-link p{
+  font-size: 18px;
+}
+
+.link-follow{
+  list-style-type: none;
+  text-align: center;
+  font-size: 40px;
+
+  li{
+    display: inline-block;
+  }
+
+  a{
+    color: #FFFF;
+
+    &:hover {
+      color: #F30AB2;
+      filter: drop-shadow(0 0 20px #F30AB2) contrast(2) brightness(2);
+    }
+  }
+ }
