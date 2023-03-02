@@ -13,13 +13,21 @@
     </div>
     <%= render 'swipes/form', swipe: @swipe, party: @party, movie: movie %>
   </div>
-  <div class="movie-detail p-4">
-    <h1 class="text-white text-start" ><%= movie.title %></h1>
-    <p class="text-white text-start">YEAR : <%= movie.year %></p>
-    <p class="text-white text-start">OVERVIEW : <%= movie.overview %></p>
+  <div class="movie-detail p-4 ">
+    <div class="movie-detail-div ">
+      <h1 class="text-white text-start pl-3" ><%= movie.title %></h1>
+    </div>
+    <div class="movie-detail-div2 p-2">
+      <div class="rating">
+        <span class="star"><i class="fa-solid fa-star"></i></span>
+        <h3 class=""><%= movie.rating %>/10</h3>
+      </div>
+      <p class="text-white text-start mt-2">YEAR : <%= movie.year %></p>
+      <p class="text-white text-start">OVERVIEW : <%= movie.overview %></p>
+    </div>
   </div>
-  <div class="text-center">
+  <%# <div class="text-center">
     <iframe width="auto" height="auto" src="https://www.youtube.com/embed/crhL1eOjf4U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  </div>
+  </div> %>
 <% end %>
 </div>
