@@ -3,12 +3,9 @@
 // ./bin/rails generate stimulus controllerName
 
 import { application } from "./application"
+import Clipboard from 'stimulus-clipboard'
 
-import ClipboardController from "./clipboard_controller"
-application.register("clipboard", ClipboardController)
+application.register('clipboard', Clipboard)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
-
-import SwiperController from "./swiper_controller"
-application.register("swiper", SwiperController)
