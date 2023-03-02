@@ -25,6 +25,10 @@ class PartiesController < ApplicationController
     authorize @party
   end
 
+  def swipe
+    skip_authorization
+  end
+
   private
 
   def party_params
