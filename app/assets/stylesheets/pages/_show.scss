@@ -1,10 +1,12 @@
 .party-members{
   display: flex;
-  justify-content: space-between;
   padding: 8px 24px;
   background: white;
   color: black;
   border-radius: 50px;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
 
   span{
     font-size: 30px;
@@ -12,12 +14,43 @@
 
   p{
     font-size: 18px;
+    flex-grow: 1;
+    margin: 0;
+  }
+}
+
+.party-users-info{
+  p{
+    margin: 0;
+    padding: 8px 24px;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    margin-bottom: 24px;
+  }
+}
+
+
+.div-invite{
+  p{
+    margin:0;
+    margin-bottom: 8px;
+  }
+}
+.copy-link{
+  display: flex;
+  flex-direction: row;
+
+  input{
+    flex-grow: 2;
   }
 }
 
 
 .share-link p{
   font-size: 18px;
+  margin: 0;
+  margin-top: 8px;
 }
 
 .link-follow{

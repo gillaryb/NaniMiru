@@ -1,0 +1,114 @@
+.header-top{
+  border-top: 2px solid white;
+  width: 80%;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  text-justify: center;
+  border-bottom: 2px solid white;
+  .title-white {
+    color: white;
+  }
+}
+
+.match-top{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box {
+  width: 100%;
+  height: 100vh;
+  img {
+  height: auto;
+  width: 100%;/* takes the 100 % height of its container (.box div)*/
+  }
+}
+
+// img {
+//   width: 100%; /* takes the 100 % width of its container (.box div)*/
+//   height: 100%; /* takes the 100 % height of its container (.box div)*/
+// }
+
+.card_content {
+  .second-txt {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+
+  background: linear-gradient(to top, rgba(26, 25, 25, 0.85), transparent);
+}
+}
+
+.wp-caption {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  }
+  .wp-caption img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  }
+  .wp-caption:after {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.6) 100%) repeat 0 0;
+  z-index: 1;
+  }
+  .wp-caption-title{
+  display: block;
+  // position: absolute;
+  width: 100%;
+  color: #fff;
+  left: 0;
+  bottom: 0;
+  padding: 1em;
+  font-weight: 700;
+  z-index: 2;
+  // -webkit-box-sizing: border-box;
+  // box-sizing: border-box;
+  }
+
+  .wp-caption-description{
+  display: block;
+  // position: absolute;
+  width: 100%;
+  color: #fff;
+  left: 0;
+  bottom: 0;
+  padding: 1em;
+  font-weight: 700;
+  z-index: 2;
+  // -webkit-box-sizing: border-box;
+  // box-sizing: border-box;
+  }
+
+  :root {
+    --star-size: 16px;
+    --star-color: #fff;
+    --star-background: rgb(255, 0, 153);
+  }
+
+  .Stars {
+    --percent: calc(var(--rating) / 5 * 100%);
+    position: static;
+    font-size: var(--star-size);
+    font-family: Times;
+    line-height: 1;
+
+    &::before {
+      content: '★★★★★';
+      letter-spacing: 3px;
+      background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }

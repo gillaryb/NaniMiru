@@ -1,6 +1,6 @@
 <div class="container">
   <div class="main-homepage">
-    <div class="header-top my-5">
+    <div class="header-top">
       <hr>
       <div class="header-top-text">
         <h1>Today's</h1>
@@ -10,50 +10,51 @@
         <hr>
       </div>
     </div>
-    <div class="party-users">
-      <h1 class="text-center"><%= @party.name %></h1>
-      <% @party.users.each do |user| %>
-        <div class="party-members">
-          <span>
-            <i class="fas fa-user-circle"></i>
-          </span>
-          <div>
-            <p><%= user.name %></p>
-          </div>
+    <div class="sub-container">
+      <div class="party-users">
+        <h3> Group name</h3>
+        <div class="party-users-info">
+          <p><%= @party.name %></p>
         </div>
-      <% end %>
-    </div>
-    <div class="div-invite">
-      <h3 class="text-center">Do you want to invite your friends ?
-        Share the link with your party</h3>
-      <div data-controller="clipboard" data-clipboard-success-content="Copied!">
-        <input type="text" value="Click the button to copy me!" data-clipboard-target="source"  <%= party_url(@party) %> />
-        <button type="button" data-action="clipboard#copy" data-clipboard-target="button">Copy to clipboard</button>
+        <% @party.users.each do |user| %>
+          <div class="party-members">
+            <span>
+              <i class="fas fa-user-circle"></i>
+            </span>
+            <div>
+              <p><%= user.name %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="div-invite">
+        <p>Share the link with your friends!</p>
+        <div data-controller="clipboard" data-clipboard-success-content="Copied!" class="copy-link">
+          <input type="text" value=" <%= party_movies_url(@party) %> " data-clipboard-target="source"/>
+          <button type="button" data-action="clipboard#copy" data-clipboard-target="button"><i class="fa-regular fa-copy"></i></button>
+        </div>
+        <div class="share-link">
+          <p>Share with</p>
+          <ul class="link-follow">
+            <li>
+              <%= link_to "#" do %>
+                <i class="fa-brands fa-instagram"></i>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "#" do %>
+                <i class="fa-brands fa-line"></i>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "#" do %>
+                <i class="fa-brands fa-whatsapp"></i>
+              <% end %>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-    <div class="share-link">
-      <p>Share with</p>
-      <ul class="link-follow">
-        <li>
-          <%= link_to "#" do %>
-            <i class="fa-brands fa-instagram"></i>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to "#" do %>
-            <i class="fa-brands fa-line"></i>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to "#" do %>
-            <i class="fa-brands fa-whatsapp"></i>
-          <% end %>
-        </li>
-      </ul>
-    </div>
-    <footer>
-      &copy; Powered by Le Wagon
-    </footer>
   </div>
 </div>
 <% if @party.has_match? %>

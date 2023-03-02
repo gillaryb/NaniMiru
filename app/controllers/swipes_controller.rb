@@ -20,6 +20,7 @@ class SwipesController < ApplicationController
   def show
     @swipe = Swipe.find(params[:id])
     @party = Party.find(params[:party_id])
+    @movie = @swipe.movie
     authorize @swipe
   end
   private
