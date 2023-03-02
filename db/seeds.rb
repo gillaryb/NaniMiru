@@ -42,7 +42,7 @@ Swipe.create!(party: gilarys, user: anri, movie: Movie.last, status: 1)
 Swipe.create!(party: gilarys, user: chieri, movie: Movie.last, status: 1)
 Swipe.create!(party: gilarys, user: jim, movie: Movie.last, status: 1)
 
-5.times do
-  Swipe.create!(party: gilarys, user: gilary, movie: Movie.all.sample, status: 1)
-  Swipe.create!(party: gilarys, user: anri, movie: Movie.all.sample, status: 1)
-end
+# 5.times do
+#   Swipe.create!(party: gilarys, user: gilary, movie: Movie.all.sample, status: 1)
+#   Swipe.create!(party: gilarys, user: anri, movie: Movie.all.sample, status: 1)
+# end
