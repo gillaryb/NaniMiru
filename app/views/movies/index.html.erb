@@ -1,18 +1,25 @@
 <div class="container text-center">
-  <div class="border-top border-bottom mt-3 mb-3">
-    <h1 class="mt-3">SWIPE</h1>
-    <h1>MOVIE YOU LIKE</h1>
-  </div>
-  <div>
-    <% @movies.each do |movie| %>
-      <div class="blog">
-        <div class="title-box">
-          <h3><%= movie.title %></h3>
-          <%= render 'swipes/form', swipe: @swipe, party: @party, movie: movie %>
+  <% @movies.each do |movie| %>
+    <div class="title-box">
+      <div class="poster-img text-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= movie.poster_url %>)">
+        <div class="movie-div p-4">
+          <h3 class="movie-title"><%= movie.title %></h3>
+          <div class="rating">
+            <span class="star"><i class="fa-solid fa-star"></i></span>
+            <h3 class=""><%= movie.rating %>/10</h3>
+          </div>
         </div>
       </div>
-      <div class=iframe width="auto" height="auto" src="https://www.youtube.com/embed/crhL1eOjf4U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      <iframe width="auto" height="auto" src="https://www.youtube.com/embed/crhL1eOjf4U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
-  <% end %>
+    <%= render 'swipes/form', swipe: @swipe, party: @party, movie: movie %>
+  </div>
+  <div class="movie-detail p-4">
+    <h1 class="text-white text-start" ><%= movie.title %></h1>
+    <p class="text-white text-start">YEAR : <%= movie.year %></p>
+    <p class="text-white text-start">OVERVIEW : <%= movie.overview %></p>
+  </div>
+  <div class="text-center">
+    <iframe width="auto" height="auto" src="https://www.youtube.com/embed/crhL1eOjf4U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+<% end %>
 </div>
