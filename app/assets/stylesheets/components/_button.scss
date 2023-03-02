@@ -1,4 +1,3 @@
-
 .button {
   color: #F30AB2;
   border: 6px solid #F30AB2;
@@ -14,10 +13,9 @@
   font-family: tahoma;
 
 
-
   &:hover {
     color: black;
     background-color: #F30AB2;
-    filter: drop-shadow(0 0 20px #F30AB2) contrast(2) brightness(2);
+    filter: drop-shadow(0 0 20px #F30AB2) contrast(2) brightness(1);
   }
 }
