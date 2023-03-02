@@ -7,7 +7,7 @@ export default class extends Controller {
     console.log('hi doug')
     const swiper = new Swiper('.swiper', {
       direction: 'vertical',
-      loop: false,
+      loop: true,
       effect: "cards",
       grabCursor: true,
     });
