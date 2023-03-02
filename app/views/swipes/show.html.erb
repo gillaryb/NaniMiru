@@ -1,12 +1,35 @@
-<div class="main-top h-100">
-  <div class="h-auto"><span class="divider"></span>
-    <h1>Match</h1>
-    <span class="divider"></span>
-  </div>
-  <div class="d-flex p-4 h-75 flex-column align-items-end justify-content-end" style='background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)),url("https://image.tmdb.org/t/p/w500/aKuFiU82s5ISJpGZp7YkIr3kCUd.jpg");'>
-    <div class="align-self-stretch">
-      <h2>Title</h2>
-      <p>description</p>
+<div class="container-top h-100">
+  <div class="match-top">
+    <div class="header-top">
+      <div class="header-top-text">
+        <h1 class="title-white">Your Match</h1>
+        <div class="header-top-pink">
+          <h1>For Today</h1>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+  <div class="h-auto">
+  </div>
+  <body>
+    <div class="box">
+      <%=image_tag @movie.poster_url%>
+      <%# <div class="d-flex p-4 h-75 flex-column align-items-end justify-content-end" style='background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)),url("https://image.tmdb.org/t/p/w500/aKuFiU82s5ISJpGZp7YkIr3kCUd.jpg");'>
+              <div class="align-self-stretch"> %>
+      <%# <h2 class="Title-txt">
+                  Title
+                </h2>
+              <p>description</p> %>
+      <figure class="wp-caption">
+        <div class="d-flex align-items-center">
+          <figcaption class="wp-caption-title"> <%=@movie.title %></figcaption>
+          <figure class="wp-caption">
+            <figcaption>
+              <div class="Stars" style="--rating: 2.3;" aria-label= <%=@movie.rating %>>/10</figcaption>
+              <figure class="wp-caption">
+              </div>
+              <figcaption class="wp-caption-description"><%= @movie.overview %></figcaption>
+            </figure>
+          </div>
+        </body>
+      </div>
