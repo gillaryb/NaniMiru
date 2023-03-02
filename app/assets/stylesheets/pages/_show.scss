@@ -1,5 +1,3 @@
-
-
 .party-members{
   display: flex;
   padding: 8px 24px;
@@ -22,13 +20,6 @@
 }
 
 .party-users-info{
-  // padding: 8px 24px;
-  // background-color: white;
-  // color: black;
-  // border-radius: 5px;
-  // margin: 8px;
-  // margin-bottom: 24px;
-
   p{
     margin: 0;
     padding: 8px 24px;
@@ -39,6 +30,13 @@
   }
 }
 
+
+.div-invite{
+  p{
+    margin:0;
+    margin-bottom: 8px;
+  }
+}
 .copy-link{
   display: flex;
   flex-direction: row;
@@ -46,16 +44,13 @@
   input{
     flex-grow: 2;
   }
-
-  // button{
-  //   position: absolute;
-  //   left: 20px;
-  // }
 }
 
 
 .share-link p{
   font-size: 18px;
+  margin: 0;
+  margin-top: 8px;
 }
 
 .link-follow{

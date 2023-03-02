@@ -33,31 +33,28 @@
           <input type="text" value=" <%= party_movies_url(@party) %> " data-clipboard-target="source"/>
           <button type="button" data-action="clipboard#copy" data-clipboard-target="button"><i class="fa-regular fa-copy"></i></button>
         </div>
-      </div>
-      <div class="share-link">
-        <p>Share with</p>
-        <ul class="link-follow">
-          <li>
-            <%= link_to "#" do %>
-              <i class="fa-brands fa-instagram"></i>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to "#" do %>
-              <i class="fa-brands fa-line"></i>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to "#" do %>
-              <i class="fa-brands fa-whatsapp"></i>
-            <% end %>
-          </li>
-        </ul>
+        <div class="share-link">
+          <p>Share with</p>
+          <ul class="link-follow">
+            <li>
+              <%= link_to "#" do %>
+                <i class="fa-brands fa-instagram"></i>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "#" do %>
+                <i class="fa-brands fa-line"></i>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "#" do %>
+                <i class="fa-brands fa-whatsapp"></i>
+              <% end %>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-    <footer>
-      &copy; Powered by Le Wagon
-    </footer>
   </div>
 </div>
 <% if @party.has_match? %>
