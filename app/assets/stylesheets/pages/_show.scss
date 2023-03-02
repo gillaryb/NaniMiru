@@ -1,10 +1,14 @@
+
+
 .party-members{
   display: flex;
-  justify-content: space-between;
   padding: 8px 24px;
   background: white;
   color: black;
   border-radius: 50px;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
 
   span{
     font-size: 30px;
@@ -12,7 +16,41 @@
 
   p{
     font-size: 18px;
+    flex-grow: 1;
+    margin: 0;
   }
+}
+
+.party-users-info{
+  // padding: 8px 24px;
+  // background-color: white;
+  // color: black;
+  // border-radius: 5px;
+  // margin: 8px;
+  // margin-bottom: 24px;
+
+  p{
+    margin: 0;
+    padding: 8px 24px;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    margin-bottom: 24px;
+  }
+}
+
+.copy-link{
+  display: flex;
+  flex-direction: row;
+
+  input{
+    flex-grow: 2;
+  }
+
+  // button{
+  //   position: absolute;
+  //   left: 20px;
+  // }
 }
 
 
