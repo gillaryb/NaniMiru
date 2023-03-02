@@ -1,40 +1,46 @@
-
-
 body{
 
   padding-bottom: 4em;
 }
 
+.star{
+  font-size: 26px;
+  color: #F30AB2;
+}
+
+.poster-img {
+height: 637px;
+width: 364px;
+border-radius: 20px;
+display: flex;
+position: relative;
+border: 2px solid white;
+
+}
+
+.rating {
+  display: flex;
+  gap: 8px;
+}
+
+
+.movie-title {
+  text-align: left;
+  color: white;
+}
+
+.movie-div {
+position: absolute;
+bottom: 0;
+}
+
 .blog{
   position: relative;
-  width: 22em;
-  height: 30em;
-
-  background: url(https://play-lh.googleusercontent.com/L4ZTdaVKsFIWH9hkT-WVoi3pAxZl-72UDQHjb1iojz-im49gKtGHdqESIQLgC-_9PUw=w240-h480-rw) no-repeat;
-  background-size: 22em 30em;
-  box-shadow: 3px 3px 20px rgba(0,0,0,0.5);
   margin: auto;
   -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
   overflow: hidden;
 }
-.blog *{
-  position: relative;
-  z-index: 2;
-}
 
-.blog, .color-overlay{
-  border-radius: 0.7em;
-}
-.color-overlay{
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  position: absolute;
-  transition: 0.7s background;
-  background: rgba(74, 100, 114, 0.3);
-  z-index: 1;
-}
 
 .title-box{
   display: inline-block;
@@ -51,14 +57,7 @@ body{
   border: none;
   background: #D0BC57;
 }
-.h3 {
-   display: inline-block;
-   font-weight: 500;
-   letter-spacing: 2px;
-   font-size: 1.4em;
 
-   text-align: center;
-}
 .intro{
     width: 170px;
   margin: 0 auto;
@@ -115,23 +114,15 @@ body{
   color: #f2f4f7;
 }
 
-space{
-  display: inline-block;
-  width: 0.6em;
-  height: 1em;
-}
 
 
 .btn-like {
   color: #F30AB2;
   border: 6px solid #F30AB2;
-  position: relative;
-  bottom: -279px;
-  left: -97px;
+  height: 56px;
+  width: 56px;
   border-radius:15px;
-  padding: 25px 10px;
   font-size: 18px;
-  letter-spacing:5px;
   text-decoration:none;
   cursor: pointer;
   font-weight: bold;
@@ -147,13 +138,10 @@ space{
 .btn-dislike {
   color: #F30AB2;
   border: 6px solid #F30AB2;
-  position: relative;
-  bottom: -174px;
-  left: 98px;
+  height: 56px;
+  width: 56px;
   border-radius: 15px;
-  padding: 26px 12px;
   font-size: 18px;
-  letter-spacing:5px;
   text-decoration:none;
   cursor: pointer;
   font-weight: bold;
