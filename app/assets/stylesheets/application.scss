@@ -6,6 +6,8 @@
 // External libraries
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome";
+@import "swiper/swiper-bundle";
+
 
 // Your CSS partials
 @import "components/index";
@@ -13,6 +15,6 @@
 @import "pages/show";
 
 
-body, html {
-  height: 100vh;
-}
+// body, html {
+//   height: 100vh;
+// }
