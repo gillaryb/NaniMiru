@@ -1,6 +1,6 @@
 .header-top{
   border-top: 2px solid white;
-  width: 80%;
+
   margin-top: 16px;
   display: flex;
   flex-direction: column;
@@ -24,6 +24,10 @@
   img {
   height: auto;
   width: 100%;/* takes the 100 % height of its container (.box div)*/
+  padding:10px;
+  border-radius:30px;
+  border:2px solid white;
+  margin-top: 20px;
   }
 }
 

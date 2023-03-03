@@ -70,4 +70,26 @@
       filter: drop-shadow(0 0 20px #F30AB2) contrast(2) brightness(2);
     }
   }
- }
+}
+
+.btn-move-swipe {
+  color: #F30AB2;
+  border: 6px solid #F30AB2;
+  border-radius:15px;
+  padding: 16px 24px;
+  font-size: 18px;
+  letter-spacing:5px;
+  text-decoration:none;
+  cursor: pointer;
+  font-weight: bold;
+  filter: drop-shadow(0 0 15px #F30AB2) drop-shadow(0 0 50px #F30AB2) contrast(2) brightness(1);
+  transition: .5s;
+  font-family: tahoma;
+
+
+  &:hover {
+    color: black;
+    background-color: #F30AB2;
+    filter: drop-shadow(0 0 20px #F30AB2) contrast(2) brightness(1);
+  }
+}

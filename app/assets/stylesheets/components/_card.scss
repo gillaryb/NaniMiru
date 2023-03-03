@@ -29,6 +29,16 @@ border: 2px solid white;
   color: white;
 }
 
+.movie-detail-div {
+  border-left: 3px solid #F30AB2;
+  padding-left: 10px;
+}
+
+.movie-detail-div2 {
+  border-top: 1px solid white;
+}
+
+
 .movie-div {
 position: absolute;
 bottom: 0;
@@ -118,7 +128,7 @@ bottom: 0;
 
 .btn-like {
   color: #F30AB2;
-  border: 6px solid #F30AB2;
+  border: 3px solid #F30AB2;
   height: 56px;
   width: 56px;
   border-radius:15px;
@@ -126,18 +136,18 @@ bottom: 0;
   text-decoration:none;
   cursor: pointer;
   font-weight: bold;
-  filter: drop-shadow(0 0 15px #F30AB2) drop-shadow(0 0 50px #F30AB2) contrast(2) brightness(1);
+  filter: drop-shadow(0 0 15px #F30AB2) drop-shadow(0 0 50px #F30AB2) contrast(1) brightness(1);
   transition: .5s;
   &:hover {
     color: black;
     background-color: #F30AB2;
-    filter: drop-shadow(0 0 20px #F30AB2) contrast(2) brightness(2);
+    filter: drop-shadow(0 0 20px #F30AB2) contrast(1) brightness(1);
   }
 }
 
 .btn-dislike {
   color: #F30AB2;
-  border: 6px solid #F30AB2;
+  border: 3px solid #F30AB2;
   height: 56px;
   width: 56px;
   border-radius: 15px;
@@ -145,11 +155,11 @@ bottom: 0;
   text-decoration:none;
   cursor: pointer;
   font-weight: bold;
-  filter: drop-shadow(0 0 15px #F30AB2) drop-shadow(0 0 50px #F30AB2) contrast(2) brightness(1);
+  filter: drop-shadow(0 0 15px #F30AB2) drop-shadow(0 0 50px #F30AB2) contrast(1) brightness(1);
   transition: .5s;
   &:hover {
     color: black;
     background-color: #F30AB2;
-    filter: drop-shadow(0 0 20px #F30AB2) contrast(2) brightness(2);
+    filter: drop-shadow(0 0 20px #F30AB2) contrast(1) brightness(1);
   }
 }

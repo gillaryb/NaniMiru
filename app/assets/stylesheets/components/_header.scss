@@ -1,12 +1,18 @@
 .header-top{
   text-transform: uppercase;
   letter-spacing: 2px;
-
-  hr{
-    border: 2px solid #FFFFFF;
-  }
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
 
   .header-top-pink{
+    color: #F30AB2;
+  }
+}
+
+.header-below{
+ color: white;
+
+ .below-text-pink{
     color: #F30AB2;
   }
 }
