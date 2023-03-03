@@ -1,3 +1,6 @@
+<% if !Membership.exists?(user: current_user, party: @party) %>
+  <%   Membership.create(user: current_user, party: @party) %>
+<% end %>
 <div class="container">
   <div class="main-homepage">
     <div class="header-top">
