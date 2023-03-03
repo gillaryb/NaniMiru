@@ -42,6 +42,13 @@ Swipe.create!(party: gilarys, user: anri, movie: Movie.last, status: 1)
 Swipe.create!(party: gilarys, user: chieri, movie: Movie.last, status: 1)
 Swipe.create!(party: gilarys, user: jim, movie: Movie.last, status: 1)
 
+puts "adding a comedy for Gilary"
+match = Movie.create!(poster_url: "https://image.tmdb.org/t/p/original/pejGnEZTKWh4yFY9xg6u7APFtHP.jpg", rating: 7, title: "Happy Gilmore", overview: "A rejected hockey player puts his skills to the golf course to save his grandmother's house.", year: 1996)
+# Swipe.create!(party: gilarys, user: gilary, movie: Movie.last, status: 1)
+Swipe.create!(party: gilarys, user: anri, movie: match, status: 1)
+Swipe.create!(party: gilarys, user: chieri, movie: match, status: 1)
+Swipe.create!(party: gilarys, user: jim, movie: match, status: 1)
+
 # 5.times do
 #   Swipe.create!(party: gilarys, user: gilary, movie: Movie.all.sample, status: 1)
 #   Swipe.create!(party: gilarys, user: anri, movie: Movie.all.sample, status: 1)
