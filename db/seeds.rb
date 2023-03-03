@@ -9,10 +9,11 @@ anri = User.create(email: "anto199309@gmail.com", password: "123123",name:"Anri"
 jim = User.create(email: "james.deeth@gmail.com", password: "123123",name:"Jim", photo_url: "https://avatars.githubusercontent.com/u/114076486")
 
 puts "adding Movies"
-
+counter = 0
 url = 'http://tmdb.lewagon.com/movie/top_rated'
 response = JSON.parse(URI.open(url).read)
 response['results'].each do |movie_hash|
+  break if counter == 5
 release_date = movie_hash['release_date']
     Movie.create!(
     poster_url: "https://image.tmdb.org/t/p/w500" + movie_hash['poster_path'],
@@ -21,6 +22,7 @@ release_date = movie_hash['release_date']
     overview: movie_hash['overview'],
     year: Date.parse(release_date).strftime("%Y")
   )
+  counter += 1
 end
 
 puts "getting the parties started"
