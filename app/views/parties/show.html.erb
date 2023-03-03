@@ -29,7 +29,7 @@
         <% end %>
       </div>
       <div class="move-to-swipe">
-        <a class="btn btn-move-swipe" href="#">Let's swipe</a>
+        <%= link_to "Let's swipe" , party_movies_path(@party), class: 'button text-center m-4' %>
       </div>
       <div class="div-invite">
         <%= render "parties/copylink" %>
