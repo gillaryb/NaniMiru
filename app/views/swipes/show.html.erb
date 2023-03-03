@@ -9,23 +9,35 @@
       </div>
     </div>
   </div>
-  <div class="h-auto">
-  </div>
-  <body>
-    <div class="box">
-      <div>
-        <%=image_tag @movie.poster_url%>
-      </div>
-      <figure class="wp-caption">
-        <div class="d-flex align-items-center">
-          <figcaption class="text-white text-start pl-3 wp-caption-title"> <%=@movie.title %></figcaption>
-          <figure class="wp-caption">
-            <figcaption>
-              <div class="Stars"><span class="star"><i class="fa-solid fa-star"></i></span>
-                <h3 class=""><%= @movie.rating %>/10</h3>
-                <figure class="wp-caption">
-                  <figcaption class="wp-caption-description"><%= @movie.overview %></figcaption>
-                </figure>
-              </div>
-            </body>
+
+
+  <div class="container text-center">
+    <div class="title-box">
+      <div class="poster-img text-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @swipe.movie.poster_url %>)">
+        <div class="movie-div p-4">
+          <h3 class="movie-title"><%= @swipe.movie.title %></h3>
+          <div class="rating">
+            <span class="star"><i class="fa-solid fa-star"></i></span>
+            <h3 class=""><%= @swipe.movie.rating %>/10</h3>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="movie-detail p-4 ">
+    <div class="movie-detail-div ">
+      <h1 class="text-white text-start pl-3" ><%= @swipe.movie.title %></h1>
+    </div>
+    <div class="movie-detail-div2 p-2">
+      <div class="rating">
+        <span class="star"><i class="fa-solid fa-star"></i></span>
+        <h3 class=""><%= @swipe.movie.rating %>/10</h3>
+      </div>
+      <p class="text-white text-start mt-2">YEAR : <%= @swipe.movie.year %></p>
+      <p class="text-white text-start">OVERVIEW : <%= @swipe.movie.overview %></p>
+    </div>
+  </div>
+  <%# <div class="text-center">
+    <iframe width="auto" height="auto" src="https://www.youtube.com/embed/crhL1eOjf4U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div> %>
+</div>
