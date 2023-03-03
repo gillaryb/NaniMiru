@@ -3,10 +3,10 @@ require 'open-uri'
 puts "adding users"
 User.destroy_all
 Movie.destroy_all
-chieri = User.create!(email: "kiichieri@gmail.com", password: "123123", name:"chieri")
-gilary = User.create(email: "gilarybacnis@gmail.com", password: "123123",name:"Gilary")
-anri = User.create(email: "anto199309@gmail.com", password: "123123",name:"Anri")
-jim = User.create(email: "james.deeth@gmail.com", password: "123123",name:"Jim")
+chieri = User.create!(email: "kiichieri@gmail.com", password: "123123", name:"chieri", photo_url: "https://avatars.githubusercontent.com/u/52782804")
+gilary = User.create(email: "gilarybacnis@gmail.com", password: "123123",name:"Gilary", photo_url: "https://avatars.githubusercontent.com/u/111226617")
+anri = User.create(email: "anto199309@gmail.com", password: "123123",name:"Anri", photo_url: "https://avatars.githubusercontent.com/u/101370552")
+jim = User.create(email: "james.deeth@gmail.com", password: "123123",name:"Jim", photo_url: "https://avatars.githubusercontent.com/u/114076486")
 
 puts "adding Movies"
 
