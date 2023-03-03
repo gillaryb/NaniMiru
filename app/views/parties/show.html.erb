@@ -1,3 +1,6 @@
+<% if !Membership.exists?(user: current_user, party: @party) %>
+  <%   Membership.create(user: current_user, party: @party) %>
+<% end %>
 <div class="container">
   <div class="main-homepage">
     <div class="header-top">
@@ -27,7 +30,6 @@
       </div>
       <div class="move-to-swipe">
         <a class="btn btn-move-swipe" href="#">Let's swipe</a>
-    
       </div>
       <div class="div-invite">
         <%= render "parties/copylink" %>
