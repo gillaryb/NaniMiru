@@ -1,6 +1,5 @@
-<div class="container">
+<div class="container text-white">
   <% @parties.each do |party| %>
-    <%= party.name %>
+    <li><%= link_to party.name, party_path(party), class: "text-white" %></li>
   <% end %>
-<p></p>
 </div>
