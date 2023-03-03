@@ -1,12 +1,13 @@
 <%= simple_form_for [@party],  html: { class: "mb-5"}  do |f| %>
   <%= f.input :name ,label: "Group name", placeholder: 'Enter a group name ', input_html: { class: "p-2"} %>
-  <%= f.input :online,
+  <p class="p-3">choose between</p>
+  <%= f.submit "IN PERSON",
             label: "Choose between",
-            as: :radio_buttons,
-            collection_wrapper_tag: 'div',
-            collection_wrapper_class: 'category-wrapper',
-            item_wrapper_class: 'category-item',
-            input_html: {class: 'category-selector'},
-            collection: Party::ONLINE%>
-  <%= f.submit 'Create', class: 'button bg-transparent text-uppercase mt-5' %>
+            class: 'category-selector'
+   %>
+  <p class="p-3">OR</p>
+  <%= f.submit :ONLINE,
+  label: "Choose between",
+            class: 'category-selector'
+   %>
 <% end %>

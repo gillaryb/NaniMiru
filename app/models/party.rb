@@ -6,7 +6,8 @@ class Party < ApplicationRecord
   has_many :swipes, dependent: :destroy
   has_many :users, through: :memberships
   has_many :movies, -> { distinct }, through: :swipes
-
+  validates :name, presence: true
+  validates :online, presence: true
 
   def owner
     memberships.find_by(creator: true)&.user
