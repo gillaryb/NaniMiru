@@ -2,7 +2,8 @@
   <div class="swiper mySwiper" data-controller="swiper">
     <div class="swiper-wrapper">
       <% @movies.each do |movie| %>
-        <div class="swiper-slide">
+      <%=  %>
+        <div class="swiper-slide" id='<%= movie.id %>'>
           <div class="poster-img text-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= movie.poster_url %>)">
             <div class="movie-div p-4">
               <h3 class="movie-title"><%= movie.title %></h3>
