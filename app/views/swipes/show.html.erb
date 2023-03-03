@@ -16,22 +16,16 @@
       <div>
         <%=image_tag @movie.poster_url%>
       </div>
-      <%# <div class="d-flex p-4 h-75 flex-column align-items-end justify-content-end" style='background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)),url("https://image.tmdb.org/t/p/w500/aKuFiU82s5ISJpGZp7YkIr3kCUd.jpg");'>
-              <div class="align-self-stretch"> %>
-      <%# <h2 class="Title-txt">
-                  Title
-                </h2>
-              <p>description</p> %>
       <figure class="wp-caption">
         <div class="d-flex align-items-center">
-          <figcaption class="wp-caption-title"> <%=@movie.title %></figcaption>
+          <figcaption class="text-white text-start pl-3 wp-caption-title"> <%=@movie.title %></figcaption>
           <figure class="wp-caption">
             <figcaption>
-              <div class="Stars" style="--rating: 2.3;" aria-label= <%=@movie.rating %>>/10</figcaption>
-              <figure class="wp-caption">
+              <div class="Stars"><span class="star"><i class="fa-solid fa-star"></i></span>
+                <h3 class=""><%= @movie.rating %>/10</h3>
+                <figure class="wp-caption">
+                  <figcaption class="wp-caption-description"><%= @movie.overview %></figcaption>
+                </figure>
               </div>
-              <figcaption class="wp-caption-description"><%= @movie.overview %></figcaption>
-            </figure>
+            </body>
           </div>
-        </body>
-      </div>
