@@ -1,5 +1,4 @@
 body{
-
   padding-bottom: 4em;
 }
 
@@ -15,7 +14,9 @@ border-radius: 20px;
 display: flex;
 position: relative;
 border: 2px solid white;
-
+background-size: cover;
+background-position: 50% 50%;
+padding: 10px;
 }
 
 .rating {

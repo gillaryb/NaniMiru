@@ -1,33 +1,31 @@
 <div class="container text-center">
-  <% @movies.each do |movie| %>
-    <div class="title-box">
-      <div class="poster-img text-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= movie.poster_url %>)">
-        <div class="movie-div p-4">
-          <h3 class="movie-title"><%= movie.title %></h3>
-          <div class="rating">
-            <span class="star"><i class="fa-solid fa-star"></i></span>
-            <h3 class=""><%= movie.rating %>/10</h3>
+  <div class="swiper mySwiper" data-controller="swiper">
+    <div class="swiper-wrapper">
+      <% @movies.each do |movie| %>
+        <div class="swiper-slide">
+          <div class="poster-img text-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= movie.poster_url %>)">
+            <div class="movie-div p-4">
+              <h3 class="movie-title"><%= movie.title %></h3>
+              <div class="rating">
+                <span class="star"><i class="fa-solid fa-star"></i></span>
+                <h3 class=""><%= movie.rating %>/10</h3>
+              </div>
+            </div>
+          </div>
+          <%= render 'swipes/form', swipe: @swipe, party: @party, movie: movie %>
+          <div class="movie-detail-div2 p-2">
+            <div class="rating">
+              <span class="star"><i class="fa-solid fa-star"></i></span>
+              <h3 class=""><%= movie.rating %>/10</h3>
+            </div>
+            <p class="text-white text-start mt-2">YEAR : <%= movie.year %></p>
+            <p class="text-white text-start">OVERVIEW : <%= movie.overview %></p>
           </div>
         </div>
-      </div>
-    </div>
-    <%= render 'swipes/form', swipe: @swipe, party: @party, movie: movie %>
-  </div>
-  <div class="movie-detail p-4 ">
-    <div class="movie-detail-div ">
-      <h1 class="text-white text-start pl-3" ><%= movie.title %></h1>
-    </div>
-    <div class="movie-detail-div2 p-2">
-      <div class="rating">
-        <span class="star"><i class="fa-solid fa-star"></i></span>
-        <h3 class=""><%= movie.rating %>/10</h3>
-      </div>
-      <p class="text-white text-start mt-2">YEAR : <%= movie.year %></p>
-      <p class="text-white text-start">OVERVIEW : <%= movie.overview %></p>
+      <% end %>
     </div>
   </div>
   <%# <div class="text-center">
     <iframe width="auto" height="auto" src="https://www.youtube.com/embed/crhL1eOjf4U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </div> %>
-<% end %>
 </div>
