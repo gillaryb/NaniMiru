@@ -11,7 +11,8 @@ class PartyPolicy < ApplicationPolicy
   end
 
   def show?
-    record.users.include? user
+    # record.users.include? user
+    true
   end
 
   def create?

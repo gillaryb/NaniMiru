@@ -5,9 +5,7 @@ import Swiper from 'swiper/bundle';
 export default class extends Controller {
   connect() {
     console.log('hi doug')
-    const swiper = new Swiper('.swiper', {
-      direction: 'vertical',
-      loop: true,
+    const swiper = new Swiper(".mySwiper", {
       effect: "cards",
       grabCursor: true,
     });

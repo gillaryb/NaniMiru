@@ -1,7 +1,11 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <div style="width:60px">
-      <%= image_tag "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1523933095/viqfqp0tfkmcwmj7cfwe.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <% if current_user.present? %>
+        <%= link_to root_path do %>
+          <%= image_tag current_user.photo_url, class: "avatar", 'aria-haspopup': true, 'aria-expanded': false %>
+        <% end %>
+      <% end %>
     </div>
     <%= link_to "#", class: "navbar-brand" do %>
       <%= image_tag "logo.png" %>
@@ -13,7 +17,7 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
+            <%= link_to "New Party", new_party_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "Watch party detail", "#", class: "nav-link" %>
