@@ -13,10 +13,13 @@ class SwipesController < ApplicationController
     @swipe.party = @party
     @swipe.user = current_user
     authorize @swipe
+
     respond_to do |format|
       if @swipe.save
-        format.html { redirect_to party_movies_path(@party) }
-        format.json { head :ok }
+
+          format.html { redirect_to party_movies_path(@party) }
+          format.json { head :ok }
+
       else
         format.html { render "swipes/show", status: :unprocessable_entity }
         format.json { head :ok }
