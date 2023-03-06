@@ -1,102 +1,7 @@
-// .party-members{
-//   display: flex;
-//   padding: 8px 24px;
-//   background: white;
-//   color: black;
-//   border-radius: 50px;
-//   flex-direction: row;
-//   align-items: center;
-//   gap: 20px;
-
-//   span{
-//     font-size: 30px;
-//   }
-
-//   p{
-//     font-size: 18px;
-//     flex-grow: 1;
-//     margin: 0;
-//   }
-// }
-
-// .party-users-info{
-//   p{
-//     margin: 0;
-//     padding: 8px 24px;
-//     background-color: white;
-//     color: black;
-//     border-radius: 5px;
-//     margin-bottom: 24px;
-//   }
-// }
-
-
-// .div-invite{
-//   p{
-//     margin:0;
-//     margin-bottom: 8px;
-//   }
-// }
-// .copy-link{
-//   display: flex;
-//   flex-direction: row;
-
-//   input{
-//     flex-grow: 2;
-//   }
-// }
-
-
-// .share-link p{
-//   font-size: 18px;
-//   margin: 0;
-//   margin-top: 8px;
-// }
-
-// .link-follow{
-//   list-style-type: none;
-//   text-align: center;
-//   font-size: 40px;
-
-//   li{
-//     display: inline-block;
-//   }
-
-//   a{
-//     color: #FFFF;
-
-//     &:hover {
-//       color: #F30AB2;
-//       filter: drop-shadow(0 0 20px #F30AB2) contrast(2) brightness(2);
-//     }
-//   }
-// }
-
-// .btn-move-swipe {
-//   color: #F30AB2;
-//   border: 6px solid #F30AB2;
-//   border-radius:15px;
-//   padding: 16px 24px;
-//   font-size: 18px;
-//   letter-spacing:5px;
-//   text-decoration:none;
-//   cursor: pointer;
-//   font-weight: bold;
-//   filter: drop-shadow(0 0 15px #F30AB2) drop-shadow(0 0 50px #F30AB2) contrast(2) brightness(1);
-//   transition: .5s;
-//   font-family: tahoma;
-
-
-//   &:hover {
-//     color: black;
-//     background-color: #F30AB2;
-//     filter: drop-shadow(0 0 20px #F30AB2) contrast(2) brightness(1);
-//   }
-// }
-
 .party-members{
   display: flex;
-  padding: 8px 24px;
+  padding: 0px 18px;
+  margin: 3px;
   background: white;
   color: black;
   border-radius: 50px;
@@ -122,7 +27,7 @@
     background-color: white;
     color: black;
     border-radius: 5px;
-    margin-bottom: 24px;
+    margin-bottom: 7px;
   }
 }
 
@@ -188,4 +93,18 @@
     background-color: #F30AB2;
     filter: drop-shadow(0 0 20px #F30AB2) contrast(2) brightness(1);
   }
+}
+
+.matched-movie {
+  color: black;
+  background-color: white;
+  width: 318px;
+  height: 39px;
+  border-radius: 6px;
+  margin-bottom: 7px;
+  border-color: #F30AB2;
+}
+
+.movie-tonight {
+  color: #F30AB2;
 }
