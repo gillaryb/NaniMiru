@@ -4,9 +4,6 @@
 
 import { application } from "./application"
 
-import ClipboardController from "./clipboard_controller"
-application.register("clipboard", ClipboardController)
-
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
@@ -15,3 +12,10 @@ application.register("popover", PopoverController)
 
 import SwiperController from "./swiper_controller"
 application.register("swiper", SwiperController)
+
+
+import { Application } from '@hotwired/stimulus'
+import Clipboard from 'stimulus-clipboard'
+
+const application = Application.start()
+application.register('clipboard', Clipboard)

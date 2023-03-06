@@ -127,13 +127,14 @@ export default class extends Controller {
     this.#initCards();
   }
 
-  #submit(url, love) {
+  #submit(url, movieId, love) {
     const csrfToken = document.querySelector("[name='csrf-token']").content
     fetch(url, {
       method: 'post',
       headers: { "X-CSRF-Token": csrfToken, "Content-Type": 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify({
         swipe: {
+          movie_id: movieId,
           status: love ? 'accepted' : 'rejected'
         }
       })
