@@ -56,7 +56,8 @@ export default class extends Controller {
           var yMulti = event.deltaY / 80;
           var rotate = xMulti * yMulti;
           const url = event.target.dataset.url
-          this.#submit(url, endX > 0)
+          const movieId = event.target.dataset.movieId
+          this.#submit(url, movieId, endX > 0)
 
           event.target.style.transform = 'translate(' + toX + 'px, ' + (toY + event.deltaY) + 'px) rotate(' + rotate + 'deg)';
           this.#initCards();
@@ -78,16 +79,18 @@ export default class extends Controller {
     event.preventDefault()
     this.#hideButtons()
     const url = event.target.dataset.url
+    const movieId = event.target.dataset.movieId
     this.#vote(true)
-    this.#submit(url, true)
+    this.#submit(url, movieId, true)
   }
 
   rejected(event){
     event.preventDefault()
     this.#hideButtons()
     const url = event.target.dataset.url
+    const movieId = event.target.dataset.movieId
     this.#vote(false)
-    this.#submit(url, false)
+    this.#submit(url, movieId, false)
   }
 
   #initCards(card, index) {

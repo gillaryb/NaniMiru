@@ -7,7 +7,7 @@
       </div>
       <div class="tinder--cards">
         <% @movies.each do |movie| %>
-          <div class="tinder--card" data-swiper-target="card" data-url="<%= party_swipes_path(@party, @swipe) %>">
+          <div class="tinder--card" data-swiper-target="card" data-url="<%= party_swipes_path(@party, @swipe) %>" data-movie-id="<%= movie.id %>">
             <%= image_tag movie.poster_url %>
             <div class= "tinder--card-title">
               <h3><%= movie.title %></h3>
@@ -24,6 +24,11 @@
               <p class="text-white text-start mt-2">YEAR : <%= movie.year %></p>
               <p class="text-white text-start">OVERVIEW : <%= movie.overview %></p>
             </div>
+          </div>
+          <div class="d-flex justify-content-around d-none buttons" data-swiper-target="buttons">
+            <p class="text-white"><%= movie.title %></p>
+            <button class='btn btn-like' data-action="click->swiper#rejected" data-url="<%= party_swipes_path(@party, @swipe) %>" data-movie-id="<%= movie.id %>"><i class="fa-solid fa-x" data-url="<%= party_swipes_path(@party, @swipe) %>" data-movie-id="<%= movie.id %>"></i></button>
+            <button class='btn btn-like' data-action="click->swiper#accepted" data-url="<%= party_swipes_path(@party, @swipe) %>" data-movie-id="<%= movie.id %>"><i class="fa-solid fa-heart text-center" data-url="<%= party_swipes_path(@party, @swipe) %>" data-movie-id="<%= movie.id %>"></i></button>
           </div>
         <% end %>
       </div>

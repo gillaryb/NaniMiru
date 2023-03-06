@@ -1,5 +1,7 @@
 <p>Share the link with your friends!</p>
-<div data-controller="clipboard" data-clipboard-success-content="Copied!" class="copy-link">
-  <input type="text" value=" <%= party_movies_url(@party) %> " data-clipboard-target="source"/>
-  <button type="button" data-action="clipboard#copy" data-clipboard-target="button"><i class="fa-regular fa-copy"></i></button>
+<div data-controller="clipboard" class="copy-link">
+  <input data-clipboard-target="source"
+         class="font-extralight text-xs rounded"
+         type="text" value="<%= party_movies_url(@party) %>" readonly>
+  <button data-clipboard-target="trigger" data-action="clipboard#copy"><i class="fa-regular fa-copy"></i></button>
 </div>

@@ -27,7 +27,7 @@ url = 'http://tmdb.lewagon.com/movie/top_rated'
 response = JSON.parse(URI.open(url).read)
 response['results'].each do |movie_hash|
   release_date = movie_hash['release_date']
-   movie = Movie.create!(
+  movie = Movie.create!(
     poster_url: "https://image.tmdb.org/t/p/w500" + movie_hash['poster_path'],
     rating: movie_hash['vote_average'],
     title: movie_hash['title'],
@@ -59,7 +59,7 @@ puts "making a match"
 Swipe.create!(party: gilarys, user: gilary, movie: Movie.first, status: 1)
 Swipe.create!(party: gilarys, user: anri, movie: Movie.first, status: 1)
 Swipe.create!(party: gilarys, user: chieri, movie: Movie.first, status: 1)
-Swipe.create!(party: gilarys, user: jim, movie: Movie.first, status: 1)
+# Swipe.create!(party: gilarys, user: jim, movie: Movie.first, status: 1)
 
 puts "adding a comedy for Gilary"
 match = Movie.create!(poster_url: "https://image.tmdb.org/t/p/original/pejGnEZTKWh4yFY9xg6u7APFtHP.jpg", rating: 7, title: "Happy Gilmore", overview: "A rejected hockey player puts his skills to the golf course to save his grandmother's house.", year: 1996)

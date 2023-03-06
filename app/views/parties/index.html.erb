@@ -1,5 +1,33 @@
 <div class="container text-white">
+
+</div>
+<div class="on-going-parties">
   <% @parties.each do |party| %>
-    <li><%= link_to party.name, party_path(party), class: "text-white" %></li>
+    <div class="notification d-flex gap-3">
+     <p><i class="fa-solid fa-film"></i></p>
+      <div class="notification-content">
+        <p>Party name : <%= link_to party.name, party_path(party) %></p>
+        <% party.accepted_movies.each do |movie| %>
+         <p>Matched movie : <%= movie.title %></p>
+        <% end %>
+      </div>
+    </div>
   <% end %>
+  <%# <div class="notification-actions">
+    <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+    <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+  </div> %>
+</div>
+<%# <div class="notification">
+  <img src='https://kitt.lewagon.com/placeholder/users/Eschults' class="avatar-large"/>
+  <div class="notification-content">
+    <p><small>9th January</small></p>
+    <p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit.</p>
+  </div>
+
+  <div class="notification-actions">
+    <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+    <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+  </div>
+</div> %>
 </div>
