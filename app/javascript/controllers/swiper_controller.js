@@ -142,8 +142,12 @@ export default class extends Controller {
         }
       })
     })
+    .then(response => response.json())
     .then((data) => {
       console.log(data)
+      if(data.redirect_url) {
+        window.location = data.redirect_url
+      }
     })
   }
 }
