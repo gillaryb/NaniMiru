@@ -3,26 +3,43 @@ require 'open-uri'
 puts "adding users"
 User.destroy_all
 Movie.destroy_all
+Party.destroy_all
+Genre.destroy_all
+MovieGenre.destroy_all
+
 chieri = User.create!(email: "kiichieri@gmail.com", password: "123123", name:"chieri", photo_url: "https://avatars.githubusercontent.com/u/52782804")
 gilary = User.create(email: "gilarybacnis@gmail.com", password: "123123",name:"Gilary", photo_url: "https://avatars.githubusercontent.com/u/111226617")
 anri = User.create(email: "anto199309@gmail.com", password: "123123",name:"Anri", photo_url: "https://avatars.githubusercontent.com/u/101370552")
 jim = User.create(email: "james.deeth@gmail.com", password: "123123",name:"Jim", photo_url: "https://avatars.githubusercontent.com/u/114076486")
 
+puts "adding genres"
+json = URI.open("https://api.themoviedb.org/3/genre/movie/list?api_key=#{ENV['TMDB_API_KEY']}").read
+genres = JSON.parse(json)
+genres["genres"].each do |info|
+  Genre.create!(
+    name: info['name'],
+    api_id: info['id']
+  )
+end
+
 puts "adding Movies"
-counter = 0
 url = 'http://tmdb.lewagon.com/movie/top_rated'
 response = JSON.parse(URI.open(url).read)
 response['results'].each do |movie_hash|
-  break if counter == 5
-release_date = movie_hash['release_date']
-    Movie.create!(
+  release_date = movie_hash['release_date']
+   movie = Movie.create!(
     poster_url: "https://image.tmdb.org/t/p/w500" + movie_hash['poster_path'],
     rating: movie_hash['vote_average'],
     title: movie_hash['title'],
     overview: movie_hash['overview'],
     year: Date.parse(release_date).strftime("%Y")
   )
-  counter += 1
+  #create MovieGenres here
+  movie_hash['genre_ids'].each do |genre_id|
+  genre = Genre.find_by(api_id: genre_id)
+  MovieGenre.create!(movie: movie, genre: genre)
+end
+
 end
 
 puts "getting the parties started"
