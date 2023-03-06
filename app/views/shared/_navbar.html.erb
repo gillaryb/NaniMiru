@@ -8,7 +8,7 @@
           <% end %>
           <% if @party %>
             <% @party.users.where.not(id: current_user).each do |user| %>
-              <%= image_tag user.photo_url, class: "avatar", 'aria-haspopup': true, 'aria-expanded': false %>
+              <%= image_tag user.photo_url, class: "avatar", 'aria-haspopup': true, 'aria-expanded': false, style: "margin-left: -16px" %>
             <% end %>
           <% end %>
         </div>
