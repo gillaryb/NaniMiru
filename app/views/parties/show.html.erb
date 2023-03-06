@@ -4,7 +4,7 @@
 <div class="container">
   <div class="main-homepage">
     <div class="header-top">
-      <div class="header-top-text">
+      <div class="header-top-text mt-2">
         <h1>Today's</h1>
         <div class="header-top-pink">
           <h1>watch party</h1>
@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="sub-container">
-      <div class="party-users">
+      <div class="party-users mt-2">
         <h3> Group name</h3>
         <div class="party-users-info">
           <p><%= @party.name %></p>
@@ -42,6 +42,10 @@
     </div>
   </div>
 </div>
+<div>
 <% if @party.has_match? %>
-  <p>match</p>
+<div class="match-movie">
+  <p >match</p>
+  </div>
 <% end %>
+</div>
