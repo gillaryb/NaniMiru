@@ -16,6 +16,9 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
+          <% @party.users.each do |user| %>
+            <%= image_tag user.photo_url, class: "avatar", 'aria-haspopup': true, 'aria-expanded': false %>
+          <% end %>
           <li class="nav-item active">
             <%= link_to "New Party", new_party_path, class: "nav-link" %>
           </li>
