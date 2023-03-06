@@ -1,16 +1,1 @@
-<div class="d-flex justify-content-around ">
-  <%= simple_form_for [party, swipe] do |f| %>
-    <%= f.input :movie_id, as: :hidden, input_html: { value: movie.id } %>
-    <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
-    <%= f.button :button, class: 'btn btn-like' do %>
-      <i class="fa-solid fa-x"></i>
-    <% end %>
-  <% end %>
-  <%= simple_form_for [party, swipe] do |f| %>
-    <%= f.input :movie_id, as: :hidden, input_html: { value: movie.id } %>
-    <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
-    <%= f.button :button, class: 'btn btn-like' do %>
-      <i class="fa-solid fa-heart text-center"></i>
-    <% end %>
-  <% end %>
-</div>
+
