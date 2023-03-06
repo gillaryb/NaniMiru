@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
   body {
-  background-color: #333333;
+  background-color: #101428;
   width: 100vw;
   height: 100vh;
   color: white;
@@ -60,7 +60,39 @@ a:hover {
     <div class='eye'></div>
     <div class='eye'></div>
     <p class='sub-text'>Oh eyeballs! Something went wrong. We're <i>looking</i> to see what happened.</p>
-    <a href=''>Go back</a>
+    <div class="go-back-btn">
+      <a class="error-link" href="/">Go back home</a>
+
+      <!-- <button class="go-back-btn" type="submit">Go Back</button> -->
+
+    </div>
   </div>
 </body>
+<style>
+
+  .error-link {
+  height: 30px;
+  width: 272px;
+  color: #F30AB2;
+  border: 6px solid #F30AB2;
+  border-radius:15px;
+  padding: 16px 24px;
+  font-size: 18px;
+  letter-spacing:5px;
+  text-decoration:none;
+  cursor: pointer;
+  font-weight: bold;
+  filter: drop-shadow(0 0 15px #F30AB2) drop-shadow(0 0 50px #F30AB2) contrast(2) brightness(1);
+  transition: .5s;
+  font-family: tahoma;
+
+
+  &:hover {
+    color: black;
+    background-color: #F30AB2;
+    filter: drop-shadow(0 0 20px #F30AB2) contrast(2) brightness(1);
+  }
+}
+
+</style>
 </html>

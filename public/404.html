@@ -1,22 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-  <div>
-    <span class='error-num'>4</span>
-    <div class='eye'></div>
-    <span class='error-num'>4</span>
-    <p class='sub-text'>Oh eyeballs! Something went wrong.</p>
-    <p class='sub-text'> We're <i>looking</i> to see what happened.</p>
-    <div class="go-back-btn">
-    <button type="submit">Go Back</button>
-  </div>
-  </div>
-
+  <title>We're sorry, but something went wrong (500)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-
-body {
-  background-color:  #101428;
+  body {
+  background-color: #101428;
   width: 100vw;
   height: 100vh;
   color: white;
@@ -62,41 +51,45 @@ a {
 a:hover {
   color: lightgray;
 }
-
-.go-back-btn {
-
-width: 183px;
-color: #F30AB2;
-border: 6px solid #F30AB2;
-border-radius:15px;
-padding: 16px 24px;
-font-size: 18px;
-text-align: center;
-letter-spacing:5px;
-text-decoration:none;
-cursor: pointer;
-font-weight: bold;
-filter: drop-shadow(0 0 15px #F30AB2) drop-shadow(0 0 50px #F30AB2) contrast(2) brightness(1);
-transition: .5s;
-&:hover {
-  color: black;
-  background-color: #F30AB2;
-  filter: drop-shadow(0 0 20px #F30AB2) contrast(2) brightness(2);
-}
-}
-
-
-
   </style>
 </head>
 
 <body class="rails-default-error-page">
-  <!-- This file lives in public/404.html -->
-
-  <style>
-
-
-
-  </style>
+  <div>
+    <span class='error-num'>4</span>
+    <div class='eye'></div>
+    <span class='error-num'>4</span>
+    <p class='sub-text'>Oh eyeballs! Something went wrong. We're <i>looking</i> to see what happened.</p>
+    <div class="go-back-btn">
+      <a class="error-link" href="/">Go back home</a>
+    </div>
+  </div>
 </body>
+<style>
+
+  .error-link {
+  height: 30px;
+  width: 272px;
+  color: #F30AB2;
+  border: 6px solid #F30AB2;
+  border-radius:15px;
+  padding: 16px 24px;
+  font-size: 18px;
+  letter-spacing:5px;
+  text-decoration:none;
+  cursor: pointer;
+  font-weight: bold;
+  filter: drop-shadow(0 0 15px #F30AB2) drop-shadow(0 0 50px #F30AB2) contrast(2) brightness(1);
+  transition: .5s;
+  font-family: tahoma;
+
+
+  &:hover {
+    color: black;
+    background-color: #F30AB2;
+    filter: drop-shadow(0 0 20px #F30AB2) contrast(2) brightness(1);
+  }
+}
+
+</style>
 </html>
