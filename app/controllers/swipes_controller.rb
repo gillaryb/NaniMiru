@@ -13,8 +13,18 @@ class SwipesController < ApplicationController
     @swipe.party = @party
     @swipe.user = current_user
     authorize @swipe
-    @swipe.save
-    redirect_to party_movies_path(@party)
+
+    respond_to do |format|
+      if @swipe.save
+
+          format.html { redirect_to party_movies_path(@party) }
+          format.json { head :ok }
+
+      else
+        format.html { render "swipes/show", status: :unprocessable_entity }
+        format.json { head :ok }
+      end
+    end
   end
 
   def show
@@ -28,5 +38,4 @@ class SwipesController < ApplicationController
   def swipe_params
     params.require(:swipe).permit(:movie_id, :status)
   end
-
 end
