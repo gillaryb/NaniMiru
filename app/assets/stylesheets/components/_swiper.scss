@@ -32,7 +32,7 @@
 .tinder {
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  overflow: auto;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -87,8 +87,8 @@
   display: inline-block;
   width: 90vw;
   max-width: 400px;
-  height: 70vh;
-  background: #FFFFFF;
+  // height: 70vh;
+  background: #101428;
   padding-bottom: 40px;
   border-radius: 8px;
   overflow: hidden;
@@ -104,6 +104,8 @@
   }
   & + .buttons {
     z-index: 100;
+    // position:absolute;
+    // bottom: 120px;
   }
 }
 
@@ -121,8 +123,7 @@
 
 .tinder--card h3 {
   margin-top: 32px;
-  font-size: 32px;
-  padding: 0 16px;
+  font-size: 24px;
   pointer-events: none;
   // color: black, !important;
 }
@@ -165,8 +166,4 @@
 
 .fa-remove {
   color: #CDD6DD;
-}
-
-.tinder--card-title{
-  color: black !important;
 }
