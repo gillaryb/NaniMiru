@@ -2,9 +2,16 @@
   <div class="container-fluid">
     <div style="width:60px">
       <% if current_user.present? %>
-        <%= link_to root_path do %>
-          <%= image_tag current_user.photo_url, class: "avatar", 'aria-haspopup': true, 'aria-expanded': false %>
-        <% end %>
+        <div class="d-flex">
+          <%= link_to root_path do %>
+            <%= image_tag current_user.photo_url, class: "avatar", 'aria-haspopup': true, 'aria-expanded': false %>
+          <% end %>
+          <% if @party %>
+            <% @party.users.where.not(id: current_user).each do |user| %>
+              <%= image_tag user.photo_url, class: "avatar", 'aria-haspopup': true, 'aria-expanded': false %>
+            <% end %>
+          <% end %>
+        </div>
       <% end %>
     </div>
     <%= link_to "#", class: "navbar-brand" do %>
@@ -16,9 +23,6 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <% @party.users.each do |user| %>
-            <%= image_tag user.photo_url, class: "avatar", 'aria-haspopup': true, 'aria-expanded': false %>
-          <% end %>
           <li class="nav-item active">
             <%= link_to "New Party", new_party_path, class: "nav-link" %>
           </li>
@@ -26,7 +30,7 @@
             <%= link_to "Ongoing Parties", parties_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Log out", "#", class: "nav-link" %>
+            <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
