@@ -23,7 +23,9 @@ genres["genres"].each do |info|
 end
 
 puts "adding Movies"
-url = 'http://tmdb.lewagon.com/movie/top_rated'
+
+(1..10).each do |page_num|
+url = "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV["TMDB_API_KEY"]}&language=en-US&page=#{page_num}"
 response = JSON.parse(URI.open(url).read)
 response['results'].each do |movie_hash|
   release_date = movie_hash['release_date']
@@ -39,7 +41,7 @@ response['results'].each do |movie_hash|
   genre = Genre.find_by(api_id: genre_id)
   MovieGenre.create!(movie: movie, genre: genre)
 end
-
+end
 end
 
 puts "getting the parties started"
