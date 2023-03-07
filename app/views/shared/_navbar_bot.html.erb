@@ -1,18 +1,17 @@
-<nav class="bto_bar" style="position: sticky;bottom: 15px;">
-  <% if user_signed_in? %>
-    <%= link_to root_path,  class: "nav-link" do%>
-      <i class="fa-solid fa-house fa-xl"></i>
+<div class="bto_bar">
+  <nav >
+    <% if user_signed_in? %>
+      <%= link_to root_path,  class: "nav-item-bot" do%>
+        <i class="fa-solid fa-house fa-xl"></i>
+      <% end %>
+      <%= link_to new_party_path, class: "nav-item-bot" do%>
+        <i class="fa-solid fa-user-plus fa-xl"></i>
+      <% end %>
+      <%= link_to parties_path, class: "nav-item-bot" do %>
+        <i class="fa-solid fa-people-group fa-xl"></i>
+      <% end %>
+    <% else %>
+      <li class="nav-item"></li>
     <% end %>
-    <%= link_to new_party_path, class: "nav-link" do%>
-      <i class="fa-solid fa-user-plus fa-xl"></i>
-    <% end %>
-    <%= link_to parties_path, class: "nav-link" do %>
-      <i class="fa-solid fa-people-group fa-xl"></i>
-    <% end %>
-    <%= link_to destroy_user_session_path, data: {turbo_method: :delete} do%>
-      <i class="fa-solid fa-arrow-right-from-bracket fa-xl"></i>
-    <% end %>
-  <% else %>
-    <li class="nav-item"></li>
-  <% end %>
-</nav>
+  </nav>
+</div>
