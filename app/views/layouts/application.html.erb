@@ -17,6 +17,13 @@
       <%= render "shared/navbar" %>
     <% end %>
     <%= render "shared/flashes" %>
-    <%= yield %>
+    <div class="d-flex flex-column justify-content-between">
+      <div class="flex-grow-1">
+        <%= yield %>
+      </div>
+      <% unless ['pages','swipes'].include?(params[:controller]) && ['home','show'].include?(params[:action]) %>
+        <%= render "shared/navbar_bot" %>
+      <% end %>
+    </div>
   </body>
 </html>
