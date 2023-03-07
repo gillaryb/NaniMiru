@@ -1,6 +1,5 @@
 .header-top{
   text-transform: uppercase;
-  letter-spacing: 2px;
   border-top: 2px solid white;
   border-bottom: 2px solid white;
 
@@ -12,8 +11,14 @@
 .header-below{
 color: white;
 padding-top: 229px;
+letter-spacing: 1px;
 
 .below-text-pink{
     color: #F30AB2;
   }
+}
+
+.logo img{
+  width: 220px;
+  height: 80px;
 }
