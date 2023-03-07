@@ -49,7 +49,7 @@ response['results'].each do |movie_hash|
         title: movie_hash['title'],
         overview: movie_hash['overview'],
         year: Date.parse(release_date).strftime("%Y"),
-        cast: castnames,
+        cast: castnames.join(", "),
         director: director_name
       )
       #create MovieGenres here
@@ -62,8 +62,6 @@ end
 
 puts "getting the parties started"
 jims = Party.create!(name: "jim's party")
-anris = Party.create!(name: "anri's party")
-chieris = Party.create!(name: "chieri's party")
 gilarys = Party.create!(name: "gilary's party")
 
 puts "populating them"
@@ -75,8 +73,8 @@ Membership.create!(party: jims, user: jim)
 
 puts "making a match"
 Swipe.create!(party: gilarys, user: gilary, movie: Movie.first, status: 1)
-Swipe.create!(party: gilarys, user: anri, movie: Movie.first, status: 1)
 Swipe.create!(party: gilarys, user: chieri, movie: Movie.first, status: 1)
+Swipe.create!(party: gilarys, user: anri, movie: Movie.first, status: 1)
 # Swipe.create!(party: gilarys, user: jim, movie: Movie.first, status: 1)
 
 puts "adding a comedy for Gilary"
