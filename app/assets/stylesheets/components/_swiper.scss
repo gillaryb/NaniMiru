@@ -198,3 +198,20 @@
 .fa-remove {
   color: #CDD6DD;
 }
+
+.tinder--card-genre {
+  text-align: center;
+}
+
+.each-genre {
+  border-radius: 95rem;
+  color: #dee2e6;
+  border: 1px solid #dee2e6;
+  text-align: center;
+  display: inline-block;
+  margin-bottom: 8px;
+
+  p {
+    font-size: 15px;
+  }
+}
