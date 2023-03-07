@@ -1,13 +1,9 @@
-<%= simple_form_for [@party],  html: { class: "mb-5"}  do |f| %>
-  <%= f.input :name ,label: "Group name", placeholder: 'Enter a group name ', input_html: { class: "text-white p-2"} %>
-  <p class="p-3">choose between</p>
-  <%= f.submit "IN PERSON",
-            label: "Choose between",
-            class: 'category-selector'
-   %>
-  <p class="p-3">OR</p>
-  <%= f.submit :ONLINE,
-  label: "Choose between",
-            class: 'category-selector'
+<%= simple_form_for [@party],  html: { class: "mb-5 align-items-center"}  do |f| %>
+  <div style="width: 90%;">
+    <%= f.input :name ,label: "Enter a party name", placeholder: 'Group name ', input_html: { class: "text-white p-2"}, label_html: { class:"fs-5" , style:"text-shadow: 0 5px 10px black;"} %>
+  </div>
+  <%= f.submit "create",
+            label: "create",
+            class: 'category-selector w-50 mt-5 '
    %>
 <% end %>
