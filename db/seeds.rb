@@ -28,20 +28,36 @@ puts "adding Movies"
 url = "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV["TMDB_API_KEY"]}&language=en-US&page=#{page_num}"
 response = JSON.parse(URI.open(url).read)
 response['results'].each do |movie_hash|
-  release_date = movie_hash['release_date']
-  movie = Movie.create!(
-    poster_url: "https://image.tmdb.org/t/p/w500" + movie_hash['poster_path'],
-    rating: rand(7..9),
-    title: movie_hash['title'],
-    overview: movie_hash['overview'],
-    year: Date.parse(release_date).strftime("%Y")
-  )
-  #create MovieGenres here
-  movie_hash['genre_ids'].each do |genre_id|
-  genre = Genre.find_by(api_id: genre_id)
-  MovieGenre.create!(movie: movie, genre: genre)
-end
-end
+    release_date = movie_hash['release_date']
+    id = movie_hash['id']
+    cast_url = "https://api.themoviedb.org/3/movie/#{id}/credits?api_key=#{ENV["TMDB_API_KEY"]}&language=en-US"
+    cast_response = JSON.parse(URI.open(cast_url).read)
+    castnames = []
+    cast_response['cast'].first(3).each do |cast_hash|
+      castnames << cast_hash['name']
+    end
+    director_name = ""
+      cast_response['crew'].each do |crew_member|
+        if crew_member['known_for_department'] == 'Directing'
+          director_name = crew_member['name']
+          break
+        end
+      end
+      movie = Movie.create!(
+        poster_url: "https://image.tmdb.org/t/p/w500" + movie_hash['poster_path'],
+        rating: rand(7..9),
+        title: movie_hash['title'],
+        overview: movie_hash['overview'],
+        year: Date.parse(release_date).strftime("%Y"),
+        cast: castnames,
+        director: director_name
+      )
+      #create MovieGenres here
+      movie_hash['genre_ids'].each do |genre_id|
+      genre = Genre.find_by(api_id: genre_id)
+      MovieGenre.create!(movie: movie, genre: genre)
+    end
+  end
 end
 
 puts "getting the parties started"
@@ -63,12 +79,12 @@ Swipe.create!(party: gilarys, user: anri, movie: Movie.first, status: 1)
 Swipe.create!(party: gilarys, user: chieri, movie: Movie.first, status: 1)
 # Swipe.create!(party: gilarys, user: jim, movie: Movie.first, status: 1)
 
-puts "adding a comedy for Gilary"
-match = Movie.create!(poster_url: "https://image.tmdb.org/t/p/original/pejGnEZTKWh4yFY9xg6u7APFtHP.jpg", rating: 7, title: "Happy Gilmore", overview: "A rejected hockey player puts his skills to the golf course to save his grandmother's house.", year: 1996)
-# Swipe.create!(party: gilarys, user: gilary, movie: Movie.last, status: 1)
-Swipe.create!(party: gilarys, user: anri, movie: match, status: 1)
-Swipe.create!(party: gilarys, user: chieri, movie: match, status: 1)
-Swipe.create!(party: gilarys, user: jim, movie: match, status: 1)
+# puts "adding a comedy for Gilary"
+# match = Movie.create!(poster_url: "https://image.tmdb.org/t/p/original/pejGnEZTKWh4yFY9xg6u7APFtHP.jpg", rating: 7, title: "Happy Gilmore", overview: "A rejected hockey player puts his skills to the golf course to save his grandmother's house.", year: 1996)
+# # Swipe.create!(party: gilarys, user: gilary, movie: Movie.last, status: 1)
+# Swipe.create!(party: gilarys, user: anri, movie: match, status: 1)
+# Swipe.create!(party: gilarys, user: chieri, movie: match, status: 1)
+# Swipe.create!(party: gilarys, user: jim, movie: match, status: 1)
 
 # 5.times do
 #   Swipe.create!(party: gilarys, user: gilary, movie: Movie.all.sample, status: 1)
