@@ -1,25 +1,31 @@
 <div class="container">
-  <div class="header-top">
-    <div class="header-top-text text-white mt-2">
-      <h1>pick genres</h1>
-      <div class="header-top-pink">
-        <h1>for a match</h1>
+  <div class="genre-top">
+    <div class="header-top">
+      <div class="header-top-text text-white mt-2">
+        <h1>Pick 3 genres</h1>
+        <div class="header-top-pink">
+          <h1>for a match</h1>
+        </div>
       </div>
     </div>
   </div>
-  <%= form_with url: party_movies_path(@party), method: :get, class: "d-flex" do %>
-    <div class="pick-genres text-white">
-      <fieldset class="form-group check_boxes optional snippet_tags">
-        <legend class="col-form-label pt-0">genres</legend>
-        <input type="hidden" name="genre_ids[]" value="">
-        <% @genres.each do |genre| %>
-          <div class="tag-item">
-            <input class="form-check-input check_boxes optional tag-selector" type="checkbox" value="<%= genre.id %>" name="genre_ids[]" id="snippet_tag_ids_<%= genre.id %>">
-            <label class="form-check-label collection_check_boxes" for="snippet_tag_ids_<%= genre.id %>"><%= genre.name %></label>
-          </div>
-        <% end %>
-      </fieldset>
-    </div>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
+  <div class="genre-serch mt-4">
+    <%= form_with url: party_movies_path(@party), method: :get, class: "d-flex" do %>
+      <div class="pick-genres text-white">
+        <fieldset class="form-group check_boxes optional snippet_tags">
+          <legend class="col-form-label pt-0"></legend>
+          <input type="hidden" name="genre_ids[]" value="">
+          <% @genres.each do |genre| %>
+            <div class="tag-item">
+              <input class="form-check-input check_boxes optional tag-selector" type="checkbox" value="<%= genre.id %>" name="genre_ids[]" id="snippet_tag_ids_<%= genre.id %>">
+              <label class="form-check-label collection_check_boxes" for="snippet_tag_ids_<%= genre.id %>"><%= genre.name %></label>
+            </div>
+          <% end %>
+        </fieldset>
+      </div>
+      <div class="genre-btn d-flex">
+        <%= submit_tag "Search", class: "serch-btn" %>
+      </div>
+    <% end %>
+  </div>
 </div>
