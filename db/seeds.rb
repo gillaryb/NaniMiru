@@ -24,7 +24,7 @@ end
 
 puts "adding Movies"
 
-(1..2).each do |page_num|
+(1..10).each do |page_num|
 url = "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV["TMDB_API_KEY"]}&language=en-US&page=#{page_num}"
 response = JSON.parse(URI.open(url).read)
 response['results'].each do |movie_hash|

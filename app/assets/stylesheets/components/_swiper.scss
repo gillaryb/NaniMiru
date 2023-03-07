@@ -109,6 +109,11 @@
   }
 }
 
+.tinder--card-details{
+  color: white;
+}
+
+
 .moving.tinder--card {
   transition: none;
   cursor: -webkit-grabbing;
@@ -122,19 +127,43 @@
 }
 
 .tinder--card h3 {
-  margin-top: 32px;
   font-size: 24px;
   pointer-events: none;
-  // color: black, !important;
+  margin-bottom: 0;
 }
 
 .tinder--card p {
-  margin-top: 24px;
   font-size: 20px;
   padding: 0 16px;
   pointer-events: none;
+  margin-bottom: 0;
+  color: white;
+  text-align:start;
 }
 
+
+.rating {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .star{
+    font-size: 24px;
+    color: #F30AB2;
+  }
+}
+
+.year-absolute{
+  position: absolute;
+  right: 0;
+}
+
+.tinder--like--remove{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px;
+}
 .tinder--buttons {
   flex: 0 0 100px;
   text-align: center;
@@ -150,6 +179,8 @@
   display: inline-block;
   margin: 0 8px;
 }
+
+
 
 .tinder--buttons button:focus {
   outline: 0;

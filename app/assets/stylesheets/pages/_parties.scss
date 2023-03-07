@@ -1,20 +1,30 @@
 .on-going-parties {
-
-
 list-style: none;
 }
 
-
+// .notification {
+//   align-items: center;
+//   background: white;
+//   padding: 8px 16px;
+//   border: 1px solid rgb(235,235,235);
+//   margin: 27px;
+//   border-radius: 30px;
+//   width: 372px;
+//   height: 100px;
+// }
 
 .notification {
-  align-items: center;
-  background: white;
-  padding: 8px 16px;
-  border: 1px solid rgb(235,235,235);
-  margin: 27px;
-  border-radius: 30px;
-  width: 372px;
-  height: 100px;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  border-radius: 95rem;
+  color: #dee2e6;
+  border: 1px solid #dee2e6;
+  margin-right: -3px;
+  margin-bottom: 16px;
+  margin-top: 15px;
+  line-height: 0;
+  padding: 25px 21px;
+  height: 71px;
+  // width: 376px;
 }
-
-
