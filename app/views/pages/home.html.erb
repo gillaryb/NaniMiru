@@ -1,14 +1,16 @@
-
 <div class="main-homepage">
   <div class="header-below">
-    <div class="below-text mt-5 mb-5">
-      <h1 class="text-white ">
-        Find a <span class="below-text-pink">perfect </span>
+    <div class="below-text my-5">
+      <div class="logo">
+        <%= image_tag src="nanilogo.png", class: "nanilogo" %>
+      </div>
+      <%= link_to 'Start a party', new_party_path, class: 'button text-center m-4'  %>
+      <h3 class="text-white mt-3">
+        <span class="below-text-pink">Choosing </span>shouldn't
         <div>
-          <span class="below-text-pink" > movie </span> for today
+          be a <span class="below-text-pink" >chore </span>. . .
         </div>
-      </h1>
+      </h3>
     </div>
-    <%= link_to 'Find a movie', new_party_path, class: 'button text-center m-4' %>
   </div>
 </div>
