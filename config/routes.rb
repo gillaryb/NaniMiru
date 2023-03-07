@@ -6,10 +6,11 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resources :parties, only: %i[index new create show] do
-    resources :swipes, only: %i[create show]
+    resources :swipes, only: %i[create]
     member do
       get 'swipe', to: 'parties#swipe'
     end
     resources :movies, only: %i[index]
   end
+  resources :swipes, only: %i[show]
 end

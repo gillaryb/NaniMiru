@@ -1,5 +1,5 @@
 <div class="container  text-center">
-  <div class="swiper mySwiper" data-controller="swiper">
+  <div data-controller="swiper">
     <div class="tinder" data-swiper-target= "container">
       <div class="tinder--status">
         <i class="fa fa-remove" data-action="click->swiper#rejected"></i>
@@ -9,22 +9,38 @@
         <% @movies.each do |movie| %>
           <div class="tinder--card" data-swiper-target="card" data-url="<%= party_swipes_path(@party, @swipe) %>" data-movie-id="<%= movie.id %>">
             <%= image_tag movie.poster_url %>
-            <div class= "tinder--card-title">
+            <div class="tinder--like--remove" data-swiper-target="buttons">
+              <button class='btn btn-like' data-action="click->swiper#rejected" data-url="<%= party_swipes_path(@party, @swipe) %>" ><i class="fa-solid fa-x" data-url="<%= party_swipes_path(@party, @swipe) %>"></i></button>
+              <button class='btn btn-like' data-action="click->swiper#accepted" data-url="<%= party_swipes_path(@party, @swipe) %>" ><i class="fa-solid fa-heart text-center" data-url="<%= party_swipes_path(@party, @swipe) %>"></i></button>
+            </div>
+            <div class="title-above my-3 p-3">
               <h3><%= movie.title %></h3>
-              <span class="star"><i class="fa-solid fa-star"></i></span>
-              <h3 class=""><%= movie.rating %>/10</h3>
             </div>
-            <div class="rating">
+            <div class="tinder--card-genre">
+              <% movie.genres.each do |genre| %>
+                <div class="each-genre">
+                  <p ><%= genre.name %></p>
+                </div>
+              <% end %>
             </div>
-          </div>
-          <div class="d-flex justify-content-around d-none buttons" data-swiper-target="buttons">
-            <p class="text-white"><%= movie.title %></p>
-            <button class='btn btn-like' data-action="click->swiper#rejected" data-url="<%= party_swipes_path(@party, @swipe) %>" data-movie-id="<%= movie.id %>"><i class="fa-solid fa-x" data-url="<%= party_swipes_path(@party, @swipe) %>" data-movie-id="<%= movie.id %>"></i></button>
-            <button class='btn btn-like' data-action="click->swiper#accepted" data-url="<%= party_swipes_path(@party, @swipe) %>" data-movie-id="<%= movie.id %>"><i class="fa-solid fa-heart text-center" data-url="<%= party_swipes_path(@party, @swipe) %>" data-movie-id="<%= movie.id %>"></i></button>
+            <div class="tinder--card-details p-3">
+              <div class="rating">
+                <span class="star"><i class="fa-solid fa-star"></i></span>
+                <p class=""><%= movie.rating %>/10</p>
+                <div class="year-absolute">
+                  <p> <%= movie.year %></p>
+                </div>
+              </div>
+            </div>
+            <div class="tinder--card-overview">
+              <p><%= movie.overview %></p>
+            </div>
           </div>
         <% end %>
       </div>
     </div>
   </div>
-</div>
+  <%# <div class="text-center">
+    <iframe width="auto" height="auto" src="https://www.youtube.com/embed/crhL1eOjf4U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div> %>
 </div>

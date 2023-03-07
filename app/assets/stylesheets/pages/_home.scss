@@ -3,34 +3,11 @@ body {
   background-color: #101428;
 }
 
-// .main-homepage-other{
-//   position: relative;
-//   text-align: center;
-//   padding: 10px 24px;
-//   justify-content: center;
-//   height: 100%;
-//   display: flex;
-//   flex-direction: column;
-//   color: #FFFF;
-
-//   form {
-//     display: flex;
-//     flex-direction: column;
-//     flex-grow: 1;
-//   }
-
-//   label, legend {
-//     margin-bottom: 16px;
-//   }
-// }
-
 .main-homepage{
-  // margin-top: 250px;
   position: relative;
   text-align: center;
   padding: 10px 24px;
-  justify-content: center;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   color: #FFFF;
@@ -43,6 +20,13 @@ body {
 
   label, legend {
     margin-bottom: 16px;
+  }
+
+  &.wrapper {
+    background-image: url(https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80);
+    background-color: #00000060;
+    background-blend-mode: multiply;
+
   }
 }
 

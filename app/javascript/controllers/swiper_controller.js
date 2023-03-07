@@ -1,17 +1,10 @@
 import { Controller } from "@hotwired/stimulus"
 import Hammer from 'hammerjs'
 
-// Connects to data-controller="swiper"
 export default class extends Controller {
   static targets = ['container', 'card', 'buttons']
 
   connect() {
-    // var this.containerTarget = document.querySelector('.tinder');
-    // var this.cardTargetss = document.querySelectorAll('.tinder--card');
-    // var nope = document.getElementById('nope');
-    // var love = document.getElementById('love');
-    console.log(this.cardTargets)
-
     this.#initCards();
     this.cardTargets.forEach((el) => {
       var hammertime = new Hammer(el);
@@ -64,15 +57,6 @@ export default class extends Controller {
         }
       });
     });
-
-
-
-    // var nopeListener = createButtonListener(false);
-    // var loveListener = createButtonListener(true);
-
-    // nope.addEventListener('click', nopeListener);
-    // love.addEventListener('click', loveListener);
-
   }
 
   accepted(event) {
@@ -123,8 +107,10 @@ export default class extends Controller {
 
     if (love) {
       card.style.transform = 'translate(' + moveOutWidth + 'px, -100px) rotate(-30deg)';
+      card.style.opacity = 0;
     } else {
       card.style.transform = 'translate(-' + moveOutWidth + 'px, -100px) rotate(30deg)';
+      card.style.opacity = 0;
     }
 
     this.#initCards();
@@ -142,8 +128,12 @@ export default class extends Controller {
         }
       })
     })
+    .then(response => response.json())
     .then((data) => {
       console.log(data)
+      if(data.redirect_url) {
+        window.location = data.redirect_url
+      }
     })
   }
 }

@@ -1,0 +1,65 @@
+.tag-item {
+  display: inline-block;
+}
+
+.tag-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.tag-selector + label {
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 89rem;
+  color: #dee2e6;
+  border: 1px solid #dee2e6;
+  margin-right: 1px;
+  margin-bottom: 10px;
+  line-height: 1;
+  padding: 10px 0;
+  height: 38px;
+  width: 175px;
+}
+
+.tag-selector:checked + label {
+  background-color: #d0ca79c2;
+  color: white;
+}
+
+.genre-top {
+  margin-top: 33px;
+}
+
+
+.serch-btn {
+
+  color: #F30AB2;
+  border: 6px solid #F30AB2;
+  border-radius:15px;
+  padding: 25px 24px;
+  font-size: 18px;
+  letter-spacing:5px;
+  text-decoration:none;
+  cursor: pointer;
+  font-weight: bold;
+  filter: drop-shadow(0 0 15px #F30AB2) drop-shadow(0 0 50px #F30AB2) contrast(2) brightness(1);
+  transition: .5s;
+  font-family: tahoma;
+  display: inline-block;
+  position: absolute;
+  top: 737px;
+  left: 58px;
+  width: 274px;
+  height: 69px;
+  background-color: transparent;
+  line-height: -4;
+  padding: 10px 0;
+
+
+  &:hover {
+    color: black;
+    background-color: #F30AB2;
+    filter: drop-shadow(0 0 20px #F30AB2) contrast(2) brightness(1);
+  }
+}
