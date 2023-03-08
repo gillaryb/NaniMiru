@@ -10,7 +10,6 @@
     <meta property="og:image" content="<%= meta_image %>">
     <meta property="og:description" content="<%= meta_description %>">
     <meta property="og:site_name" content="<%= meta_title %>">
-
     <title>Nanimiru</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
@@ -31,7 +30,7 @@
       <div class="flex-grow-1">
         <%= yield %>
       </div>
-      <% unless ['pages','swipes'].include?(params[:controller]) && ['home','show'].include?(params[:action]) %>
+      <% unless ['pages'].include?(params[:controller]) %>
         <%= render "shared/navbar_bot" %>
       <% end %>
     </div>
