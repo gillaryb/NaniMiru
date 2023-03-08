@@ -2,7 +2,6 @@
 <div data-controller="clipboard" class="copy-link">
   <input data-clipboard-target="source"
          class="font-extralight text-xs rounded"
-         type="text" value="<%= party_movies_url(@party) %>" readonly>
-  <button data-clipboard-target="trigger" data-action="clipboard#copy"><i class="fa-regular fa-copy"></i></button>
+         type="text" value="<%= party_url(@party) %>" readonly>
+  <button data-clipboard-target="trigger" data-action="click->clipboard#copy"><i class="fa-regular fa-copy"></i></button>
 </div>
-
