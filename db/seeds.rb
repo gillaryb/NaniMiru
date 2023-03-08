@@ -61,6 +61,10 @@ response['results'].each do |movie_hash|
   end
 end
 
+unwanted_genre = ["Adventure", "History", "Music", "TV Movie", "War", "Western"]
+Genre.where(name: unwanted_genre ).destroy_all
+Genre.where(name: "Science Fiction").update_all(name: "Sci-Fi")
+
 puts "getting the parties started"
 jims = Party.create!(name: "jim's party")
 gilarys = Party.create!(name: "gilary's party")
