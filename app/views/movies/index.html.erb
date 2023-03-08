@@ -4,7 +4,9 @@
       <i class="fa fa-remove" data-action="click->swiper#rejected"></i>
       <i class="fa fa-heart" data-action="click->swiper#accepted"></i>
     </div>
-    <div class="tinder--cards">
+
+    <div class="tinder--cards summary">
+
       <% @movies.each do |movie| %>
         <div class="tinder--card" data-swiper-target="card" data-url="<%= party_swipes_path(@party, @swipe) %>" data-movie-id="<%= movie.id %>">
           <%= image_tag movie.poster_url %>
@@ -37,6 +39,7 @@
             <p>CAST : <%= movie.cast %></p>
           </div>
         </div>
+
         <div class="tinder--card-director">
         </div>
       <% end %>
