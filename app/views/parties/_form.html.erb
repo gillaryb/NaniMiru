@@ -1,6 +1,19 @@
 <%= simple_form_for [@party],  html: { class: "mb-5 align-items-center"}  do |f| %>
   <div style="width: 90%;">
     <%= f.input :name ,label: "Enter a party name", placeholder: 'Group name ', input_html: { class: "text-white p-2"}, label_html: { class:"fs-5" , style:"text-shadow: 0 5px 10px black;"} %>
+    <div class="pick-genres text-white">
+      <fieldset class="form-group check_boxes optional snippet_tags">
+        <legend class="col-form-label pt-0"></legend>
+        <div class="tags">
+          <% @genres.each_with_index do |genre, index| %>
+            <div class="tag-item">
+              <input class="form-check-input check_boxes optional tag-selector" type="checkbox" value="<%= genre.id %>" name="party[party_genres_attributes][<%= index %>][genre_id]" id="genre_tag_<%= genre.id %>">
+              <label class="form-check-label collection_check_boxes" for="genre_tag_<%= genre.id %>"><%= genre.name %></label>
+            </div>
+          <% end %>
+        </div>
+      </fieldset>
+    </div>
   </div>
   <%= f.submit "create",
             label: "create",

@@ -1,5 +1,4 @@
 class PartiesController < ApplicationController
-
   def index
     @parties = policy_scope(Party)
   end
@@ -8,6 +7,7 @@ class PartiesController < ApplicationController
     @party = Party.new
     @party.party_genres.build
     authorize @party
+    @genres = Genre.all
   end
 
   def create
@@ -15,8 +15,11 @@ class PartiesController < ApplicationController
     authorize @party
     if @party.save
       Membership.create(user: current_user, party: @party)
+      
       redirect_to party_path(@party)
     else
+      
+      @genres = Genre.all
       render :new, status: :unprocessable_entity
     end
   end
@@ -35,5 +38,4 @@ class PartiesController < ApplicationController
   def party_params
     params.require(:party).permit(:name, :online, party_genres_attributes: [:genre_id])
   end
-
 end
