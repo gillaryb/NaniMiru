@@ -19,7 +19,7 @@ body {
   }
 
   label, legend {
-    margin-bottom: 16px;
+    margin-bottom: 5px;
   }
 
   &.wrapper {
@@ -34,6 +34,5 @@ body {
   height: 75vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   flex-grow: 1;
 }
