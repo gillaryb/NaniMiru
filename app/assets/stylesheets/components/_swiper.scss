@@ -142,7 +142,6 @@
 
 .tinder--card-overview{
   position: relative;
-  padding-bottom: 500px;
 
   // .gradient{
   //   position: absolute;
@@ -214,6 +213,7 @@
 
 .tinder--card-genre {
   text-align: center;
+
 }
 
 .each-genre {
@@ -229,9 +229,32 @@
   }
 }
 
+
+.tinder--card-overview {
+  border-top: 2px dotted white;
+  padding-top: 22px;
+
+}
+
+
+
+.tinder--card-director {
+  border-top: 2px dotted white;
+  padding-top: 22px;
+
+}
+
+
+.tinder--card-cast {
+  border-top: 2px dotted white;
+  padding-top: 22px;
+}
+
+
 .summary {
   position: sticky;
   top: -60vh;
+
 }
 
 
