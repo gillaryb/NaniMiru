@@ -5,18 +5,17 @@
   <div class="main-homepage">
     <div class="header-top">
       <div class="header-top-text mt-2">
-        <h1>Today's</h1>
+        <h1>WELCOME TO</h1>
         <div class="header-top-pink">
-          <h1>watch party</h1>
+          <h1><%= @party.name %></h1>
         </div>
       </div>
     </div>
     <div class="sub-container">
       <div class="party-users mt-2">
-        <h3> Group name</h3>
-        <div class="party-users-info">
-          <p><%= @party.name %></p>
-        </div>
+        <% @party.genres.each do |genre| %>
+          <%= genre.name %>
+        <% end %>
         <% @party.users.each do |user| %>
           <div class="party-members">
             <span>
@@ -25,22 +24,16 @@
             <div>
               <p><%= user.name %></p>
             </div>
+            <div class="swipe-count">
+            <i class="fa-solid fa-repeat"></i>
+            <%= @party.swipes.where(user: user).count %>
+            </div>
           </div>
         <% end %>
       </div>
-      <div class="mt-2">
-        <h3 class="movie-tonight"> Movie for tonight </h3>
-        <div class="matched-movie">
-          <% if @party.has_match? %>
-            <% @party.accepted_movies.each do |movie| %>
-              <%= movie.title %>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
       <div>
         <div class="move-to-swipe">
-          <%= link_to "Let's swipe", party_movies_path(@party), class: "button text-center m-4"%>
+          <%= link_to "Let's choose", party_movies_path(@party), class: "button text-center m-4"%>
         </div>
         <div class="div-invite">
           <%= render "parties/copylink" %>
@@ -52,3 +45,13 @@
     </div>
   </div>
 </div>
+<%# <div class="mt-2">
+  <h3 class="movie-tonight"> Movie for tonight </h3>
+  <div class="matched-movie">
+    <% if @party.has_match? %>
+<%# <% @party.accepted_movies.each do |movie| %>
+  <%# <%= movie.title %>
+  <%# <% end %>
+  <%# <% end %>
+  <%# </div>
+</div> %>
