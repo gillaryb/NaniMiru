@@ -5,7 +5,8 @@
       <fieldset class="form-group check_boxes optional snippet_tags">
         <legend class="col-form-label pt-0"></legend>
         <div class="tags">
-          <% @genres.each_with_index do |genre, index| %>
+          <% genres = Genre.all.order(name: :asc) %>
+          <% genres.each_with_index do |genre, index| %>
             <div class="tag-item">
               <input class="form-check-input check_boxes optional tag-selector" type="checkbox" value="<%= genre.id %>" name="party[party_genres_attributes][<%= index %>][genre_id]" id="genre_tag_<%= genre.id %>">
               <label class="form-check-label collection_check_boxes" for="genre_tag_<%= genre.id %>"><%= genre.name %></label>
@@ -17,6 +18,6 @@
   </div>
   <%= f.submit "create",
             label: "create",
-            class: 'category-selector w-50 mt-5 '
+            class: 'category-selector w-50 mt-4'
    %>
 <% end %>

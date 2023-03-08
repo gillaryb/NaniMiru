@@ -97,7 +97,7 @@ export default class extends Controller {
 
   #vote(love) {
     var cards = document.querySelectorAll('.tinder--card:not(.removed)');
-    var moveOutWidth = document.body.clientWidth * 1.5;
+    var moveOutWidth = document.body.clientWidth * 1.25;
 
     if (!cards.length) return false;
 

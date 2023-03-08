@@ -7,7 +7,7 @@ class PartiesController < ApplicationController
     @party = Party.new
     @party.party_genres.build
     authorize @party
-    @genres = Genre.all
+    @genres = Genre.all.order(name: :asc)
   end
 
   def create
@@ -19,7 +19,7 @@ class PartiesController < ApplicationController
       redirect_to party_path(@party)
     else
 
-      @genres = Genre.all
+      @genres = Genre.all.order(name: :asc)
       render :new, status: :unprocessable_entity
     end
   end
