@@ -3,7 +3,12 @@ class MoviesController < ApplicationController
   def index
     @swipe = Swipe.new
     @party = Party.find(params[:party_id])
-    @movies = Movie.joins(:movie_genres).where(movie_genres: {genre_id: @party.genres})
-    render 'movies/index'
+    if @party.genres.present?
+      @movies = Movie.joins(:movie_genres).where(movie_genres: {genre_id: @party.genres})
+      render 'movies/index'
+    else
+      @genres = Genre.all.order(name: :asc)
+      render 'genres/index' # this is a view
+    end
   end
 end

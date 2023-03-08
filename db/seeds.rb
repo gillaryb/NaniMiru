@@ -67,8 +67,7 @@ Genre.where(name: unwanted_genre ).destroy_all
 Genre.where(name: "Science Fiction").update_all(name: "Sci-Fi")
 
 puts "getting the parties started"
-jims = Party.create!(name: "jim's party")
-gilarys = Party.create!(name: "gilary's party")
+gilarys = Party.create!(name: "We <3 The Godfather")
 
 puts "populating them"
 Membership.create!(party: gilarys, user: gilary)
