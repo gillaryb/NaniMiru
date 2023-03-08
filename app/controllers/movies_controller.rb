@@ -7,7 +7,7 @@ class MoviesController < ApplicationController
       @movies = Movie.joins(:movie_genres).where(movie_genres: {genre_id: params[:genre_ids]})
       render 'movies/index'
     else
-      @genres = Genre.all
+      @genres = Genre.all.order(name: :asc)
       render 'genres/index' # this is a view
     end
     # @movies = policy_scope(Movie)

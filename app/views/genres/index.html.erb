@@ -9,7 +9,7 @@
       </div>
     </div>
   </div>
-  <div class="genre-serch mt-4">
+  <div class="genre-search mt-4">
     <%= form_with url: party_movies_path(@party), method: :get, class: "d-flex justify-content-center align-items-center flex-column gap-3" do %>
       <div class="pick-genres text-white">
         <fieldset class="form-group check_boxes optional snippet_tags">
@@ -26,7 +26,7 @@
         </fieldset>
       </div>
       <div class="genre-btn d-flex">
-        <%= submit_tag "Search", class: "serch-btn" %>
+        <%= submit_tag "Search", class: "search-btn" %>
       </div>
     <% end %>
   </div>

@@ -24,7 +24,7 @@ end
 
 puts "adding Movies"
 
-(1..10).each do |page_num|
+(1..5).each do |page_num|
 url = "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV["TMDB_API_KEY"]}&language=en-US&page=#{page_num}"
 response = JSON.parse(URI.open(url).read)
 response['results'].each do |movie_hash|
@@ -61,6 +61,10 @@ response['results'].each do |movie_hash|
   end
 end
 
+unwanted_genre = ["Adventure", "History", "Mystery", "Music", "TV Movie", "Western"]
+Genre.where(name: unwanted_genre ).destroy_all
+Genre.where(name: "Science Fiction").update_all(name: "Sci-Fi")
+
 puts "getting the parties started"
 jims = Party.create!(name: "jim's party")
 gilarys = Party.create!(name: "gilary's party")
@@ -77,15 +81,3 @@ Swipe.create!(party: gilarys, user: gilary, movie: Movie.first, status: 1)
 Swipe.create!(party: gilarys, user: chieri, movie: Movie.first, status: 1)
 Swipe.create!(party: gilarys, user: anri, movie: Movie.first, status: 1)
 # Swipe.create!(party: gilarys, user: jim, movie: Movie.first, status: 1)
-
-puts "adding a comedy for Gilary"
-match = Movie.create!(poster_url: "https://image.tmdb.org/t/p/original/pejGnEZTKWh4yFY9xg6u7APFtHP.jpg", rating: 7, title: "Happy Gilmore", overview: "A rejected hockey player puts his skills to the golf course to save his grandmother's house.", year: 1996)
-# Swipe.create!(party: gilarys, user: gilary, movie: Movie.last, status: 1)
-Swipe.create!(party: gilarys, user: anri, movie: match, status: 1)
-Swipe.create!(party: gilarys, user: chieri, movie: match, status: 1)
-Swipe.create!(party: gilarys, user: jim, movie: match, status: 1)
-
-# 5.times do
-#   Swipe.create!(party: gilarys, user: gilary, movie: Movie.all.sample, status: 1)
-#   Swipe.create!(party: gilarys, user: anri, movie: Movie.all.sample, status: 1)
-# end
