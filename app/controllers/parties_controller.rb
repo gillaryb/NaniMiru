@@ -15,10 +15,10 @@ class PartiesController < ApplicationController
     authorize @party
     if @party.save
       Membership.create(user: current_user, party: @party)
-      
+
       redirect_to party_path(@party)
     else
-      
+
       @genres = Genre.all
       render :new, status: :unprocessable_entity
     end
