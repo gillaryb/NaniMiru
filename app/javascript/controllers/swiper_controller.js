@@ -50,7 +50,7 @@ export default class extends Controller {
           var rotate = xMulti * yMulti;
           const url = event.target.dataset.url
           const movieId = event.target.dataset.movieId
-          this.#submit(url, movieId, endX > 0)
+          this.#submit(url, movieId, event.deltaX > 0)
 
           event.target.style.transform = 'translate(' + toX + 'px, ' + (toY + event.deltaY) + 'px) rotate(' + rotate + 'deg)';
           this.#initCards();
@@ -117,6 +117,7 @@ export default class extends Controller {
   }
 
   #submit(url, movieId, love) {
+    console.log(love)
     const csrfToken = document.querySelector("[name='csrf-token']").content
     fetch(url, {
       method: 'post',
