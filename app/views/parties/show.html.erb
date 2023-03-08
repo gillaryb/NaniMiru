@@ -20,7 +20,7 @@
         <% @party.users.each do |user| %>
           <div class="party-members">
             <span>
-              <i class="fas fa-user-circle"></i>
+              <%= image_tag user.photo_url, class: "avatar", 'aria-haspopup': true, 'aria-expanded': false, style: "margin-left: -16px" %>
             </span>
             <div>
               <p><%= user.name %></p>
@@ -28,7 +28,6 @@
           </div>
         <% end %>
       </div>
-
       <div class="mt-2">
         <h3 class="movie-tonight"> Movie for tonight </h3>
         <div class="matched-movie">
@@ -49,9 +48,7 @@
             <%= render "parties/icon" %>
           </div>
         </div>
-
       </div>
     </div>
   </div>
 </div>
-
