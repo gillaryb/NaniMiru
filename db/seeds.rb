@@ -74,7 +74,6 @@ Membership.create!(party: gilarys, user: gilary)
 Membership.create!(party: gilarys, user: anri)
 Membership.create!(party: gilarys, user: chieri)
 Membership.create!(party: gilarys, user: jim)
-Membership.create!(party: jims, user: jim)
 
 puts "making a match"
 Swipe.create!(party: gilarys, user: gilary, movie: Movie.first, status: 1)
