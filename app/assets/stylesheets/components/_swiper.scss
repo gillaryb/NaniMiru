@@ -31,8 +31,8 @@
 
 .tinder {
   width: 100vw;
-  height: 100vh;
-  overflow: auto;
+  height: calc(100vh - 58px);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -76,11 +76,11 @@
 
 .tinder--cards {
   flex-grow: 1;
-  padding-top: 40px;
   text-align: center;
   display: flex;
   justify-content: center;
   z-index: 1;
+  align-items: center;
 }
 
 .tinder--card {
@@ -255,4 +255,34 @@
   position: sticky;
   top: -60vh;
 
+}
+
+
+.tinder--cards.show-details {
+  .movie-card-info {
+    top: 0;
+  }
+
+  .movie-card-info .caret-up {
+    transform: rotate(180deg);
+  }
+}
+
+.movie-card-info {
+  position: absolute;
+  top: 88%;
+  transition: top 500ms ease-out;
+  user-select: none;
+  background: rgba(0,0,0,0.7);
+  overflow: scroll;
+  z-index: 100;
+  color: white;
+  padding: 2em;
+
+  .caret-up {
+    display: flex;
+    justify-content: center;
+    margin-top: -0.7em;
+    font-size: 3em;
+  }
 }

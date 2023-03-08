@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 import Hammer from 'hammerjs'
 
 export default class extends Controller {
-  static targets = ['container', 'card', 'buttons']
+  static targets = ['container', 'card', 'buttons', "cards"]
 
   connect() {
     this.#initCards();
@@ -68,13 +68,17 @@ export default class extends Controller {
     this.#submit(url, movieId, true)
   }
 
-  rejected(event){
+  rejected(event) {
     event.preventDefault()
     this.#hideButtons()
     const url = event.target.dataset.url
     const movieId = event.target.dataset.movieId
     this.#vote(false)
     this.#submit(url, movieId, false)
+  }
+
+  showDetails(event) {
+    this.cardsTarget.classList.toggle("show-details")
   }
 
   #initCards(card, index) {
