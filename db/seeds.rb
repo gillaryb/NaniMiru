@@ -41,6 +41,7 @@ response['results'].each do |movie_hash|
         if crew_member['known_for_department'] == 'Directing'
           director_name = crew_member['name']
           break
+        else director_name = "Alan Smithee"
         end
       end
       movie = Movie.create!(

@@ -6,6 +6,7 @@ class PartiesController < ApplicationController
 
   def new
     @party = Party.new
+    @party.party_genres.build
     authorize @party
   end
 
@@ -32,7 +33,7 @@ class PartiesController < ApplicationController
   private
 
   def party_params
-    params.require(:party).permit(:name, :online)
+    params.require(:party).permit(:name, :online, party_genres_attributes: [:genre_id])
   end
 
 end
