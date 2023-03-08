@@ -8,6 +8,7 @@
   flex-direction: row;
   align-items: center;
   gap: 20px;
+  justify-content: space-between;
 
   span{
     font-size: 30px;
@@ -112,4 +113,18 @@
 .swipe-count {
   font-size: 18px;
   text-align: right;
+}
+
+.chosen-genres {
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 89rem;
+  color: #dee2e6;
+  border: 1px solid #dee2e6;
+  margin-right: 1px;
+  margin-bottom: 0px;
+  line-height: 1;
+  padding: 10px 14px;
+  height: 38px;
 }
