@@ -2,6 +2,7 @@ require 'open-uri'
 
 User.destroy_all
 Movie.destroy_all
+PartyGenre.destroy_all
 Party.destroy_all
 Genre.destroy_all
 MovieGenre.destroy_all
