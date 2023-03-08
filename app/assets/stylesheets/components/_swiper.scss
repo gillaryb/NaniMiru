@@ -140,6 +140,20 @@
   text-align:start;
 }
 
+.tinder--card-overview{
+  position: relative;
+  padding-bottom: 500px;
+
+  // .gradient{
+  //   position: absolute;
+  //   z-index: 50;
+  //   top: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   width: 100%;
+  //   background: red;
+  // }
+}
 
 .rating {
   display: flex;
@@ -213,4 +227,9 @@
   p {
     font-size: 15px;
   }
+}
+
+.summary {
+  position: sticky;
+  top: -60vh;
 }
