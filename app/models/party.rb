@@ -6,6 +6,8 @@ class Party < ApplicationRecord
   has_many :swipes, dependent: :destroy
   has_many :users, through: :memberships
   has_many :movies, -> { distinct }, through: :swipes
+  has_many :party_genres, dependent: :destroy
+  has_many :genres, through: :party_genres
   validates :name, presence: true
   validates :online, presence: true
 
