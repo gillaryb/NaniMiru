@@ -1,45 +1,48 @@
-
-  <div data-controller="swiper">
-    <div class="tinder" data-swiper-target= "container">
-      <div class="tinder--status">
-        <i class="fa fa-remove" data-action="click->swiper#rejected"></i>
-        <i class="fa fa-heart" data-action="click->swiper#accepted"></i>
-      </div>
-      <div class="tinder--cards">
-        <% @movies.each do |movie| %>
-          <div class="tinder--card" data-swiper-target="card" data-url="<%= party_swipes_path(@party, @swipe) %>" data-movie-id="<%= movie.id %>">
-            <%= image_tag movie.poster_url %>
-            <div class="title-above my-3 p-3">
-              <h3><%= movie.title %></h3>
-            </div>
-            <div class="tinder--card-genre">
-              <% movie.genres.each do |genre| %>
-                <div class="each-genre">
-                  <p ><%= genre.name %></p>
-                </div>
-              <% end %>
-            </div>
-            <div class="tinder--card-details p-3">
-              <div class="rating">
-                <span class="star"><i class="fa-solid fa-star"></i></span>
-                <p class=""><%= movie.rating %>/10</p>
-                <div class="year-absolute">
-                  <p> <%= movie.year %></p>
-                </div>
+<div data-controller="swiper">
+  <div class="tinder" data-swiper-target= "container">
+    <div class="tinder--status">
+      <i class="fa fa-remove" data-action="click->swiper#rejected"></i>
+      <i class="fa fa-heart" data-action="click->swiper#accepted"></i>
+    </div>
+    <div class="tinder--cards">
+      <% @movies.each do |movie| %>
+        <div class="tinder--card" data-swiper-target="card" data-url="<%= party_swipes_path(@party, @swipe) %>" data-movie-id="<%= movie.id %>">
+          <%= image_tag movie.poster_url %>
+          <div class="title-above my-3 p-3">
+            <h3><%= movie.title %></h3>
+          </div>
+          <div class="tinder--card-genre">
+            <% movie.genres.each do |genre| %>
+              <div class="each-genre">
+                <p ><%= genre.name %></p>
+              </div>
+            <% end %>
+          </div>
+          <div class="tinder--card-details p-3">
+            <div class="rating">
+              <span class="star"><i class="fa-solid fa-star"></i></span>
+              <p class=""><%= movie.rating %>/10</p>
+              <div class="year-absolute">
+                <p> <%= movie.year %></p>
               </div>
             </div>
-            <div class="tinder--card-overview">
-              <p><%= movie.overview %></p>
-            </div>
           </div>
-          <div class="tinder--card-cast">
+          <div class="tinder--card-overview mt-3">
+            <p><%= movie.overview %></p>
           </div>
-          <div class="tinder--card-director">
+          <div class="tinder--card-director mt-3">
+            <p>DIRECTOR : <%= movie.director %></p>
           </div>
-        <% end %>
-      </div>
+          <div class="tinder--card-cast mt-3">
+            <p>CAST : <%= movie.cast %></p>
+          </div>
+        </div>
+        <div class="tinder--card-director">
+        </div>
+      <% end %>
     </div>
   </div>
-  <%# <div class="text-center">
+</div>
+<%# <div class="text-center">
     <iframe width="auto" height="auto" src="https://www.youtube.com/embed/crhL1eOjf4U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </div> %>
