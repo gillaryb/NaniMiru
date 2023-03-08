@@ -61,7 +61,7 @@ response['results'].each do |movie_hash|
   end
 end
 
-unwanted_genre = ["Adventure", "History", "Music", "TV Movie", "War", "Western"]
+unwanted_genre = ["Adventure", "History", "Mystery", "Music", "TV Movie", "Western"]
 Genre.where(name: unwanted_genre ).destroy_all
 Genre.where(name: "Science Fiction").update_all(name: "Sci-Fi")
 
