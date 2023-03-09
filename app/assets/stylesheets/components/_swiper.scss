@@ -110,7 +110,7 @@
 
 .movie-details-duration{
   position: absolute;
-  top: 4px;
+  top: 8px;
   right: 0;
 
   p{
@@ -234,7 +234,7 @@
 
 .movie-details-genre{
   margin-top: 14px;
-  padding-bottom: 20px;
+  padding-bottom: 9px;
 
 }
 .movie-details-genre-top{
@@ -243,6 +243,7 @@
   border: 1px solid #6c8299;
   text-align: center;
   display: inline-block;
+  margin-bottom: 10px;
 
   p {
     font-size: 15px;
