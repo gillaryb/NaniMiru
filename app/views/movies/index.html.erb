@@ -22,7 +22,7 @@
             </div>
             <div class="movie-details-genre">
               <% movie.genres.each do |genre| %>
-                <div class="each-genre">
+                <div class="movie-details-genre-top">
                   <p ><%= genre.name %></p>
                 </div>
               <% end %>
@@ -31,7 +31,7 @@
         </div>
         <div class="movie-card-info d-none" data-action="click->swiper#showDetails">
           <div class="caret-up">
-            <i class="fa-solid fa-caret-up"></i>
+            <i class="fa-solid fa-angle-up"></i>
           </div>
           <div class="title-above my-3 p-3">
             <h3><%= movie.title %></h3>

@@ -35,9 +35,9 @@ class SwipesController < ApplicationController
   def show
     @swipe = Swipe.find(params[:id])
     @movie = @swipe.movie
-    @party = @swipe.party
     authorize @swipe
   end
+
   private
 
   def swipe_params

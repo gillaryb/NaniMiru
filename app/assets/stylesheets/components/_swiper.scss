@@ -226,6 +226,27 @@
 
 }
 
+
+.movie-details-genre{
+  margin-top: 14px;
+  padding-bottom: 20px;
+
+}
+.movie-details-genre-top{
+  border-radius: 95rem;
+  color: #6c8299;
+  border: 1px solid #6c8299;
+  text-align: center;
+  display: inline-block;
+
+  p {
+    font-size: 15px;
+  }
+
+}
+
+
+
 .each-genre {
   border-radius: 95rem;
   color: #dee2e6;
@@ -238,6 +259,8 @@
     font-size: 15px;
   }
 }
+
+
 
 
 .tinder--card-overview {
