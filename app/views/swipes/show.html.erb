@@ -34,6 +34,11 @@
         </div>
       </div>
       <div class="tinder--card-cast text-white mt-3">
+    <% if @movie.netflix_url %>
+      <div>
+        <%= link_to "watch on netflix", @movie.netflix_url, class: "netflix_url"  %>
+      </div>
+    <% end %>
         <p class="match-details">OVERVIEW</p>
       </div>
       <p class="text-white text-start"><%= @movie.overview %></p>
@@ -47,7 +52,4 @@
     </div>
   </div>
 </div>
-<%# <div class="text-center">
-    <iframe width="auto" height="auto" src="https://www.youtube.com/embed/crhL1eOjf4U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  </div> %>
 </div>
