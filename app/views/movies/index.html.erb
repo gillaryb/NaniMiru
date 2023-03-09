@@ -8,6 +8,26 @@
       <% @movies.each do |movie| %>
         <div class="tinder--card" data-swiper-target="card" data-url="<%= party_swipes_path(@party, @swipe) %>" data-movie-id="<%= movie.id %>">
           <%= image_tag movie.poster_url %>
+          <div class="move-details bg-white position-relative">
+            <p><%= movie.title %>
+              <span>
+                (<%= movie.year %>)
+              </span>
+            </p>
+            <div class="movie-details-rating">
+              <p>100%</p>
+            </div>
+            <div class="movie-details-duration">
+              <p>1hr 20 mins</p>
+            </div>
+            <div class="movie-details-genre">
+              <% movie.genres.each do |genre| %>
+                <div class="each-genre">
+                  <p ><%= genre.name %></p>
+                </div>
+              <% end %>
+            </div>
+          </div>
         </div>
         <div class="movie-card-info d-none" data-action="click->swiper#showDetails">
           <div class="caret-up">
