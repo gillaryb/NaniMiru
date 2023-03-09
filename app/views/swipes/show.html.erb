@@ -2,7 +2,7 @@
   <div class="match-top">
     <div class="header-top">
       <div class="header-top-text mb-2">
-        <h1 class="title-white mt-3">Your movie</h1>
+        <h1 class="title-white mt-3">YOUR MATCH</h1>
         <div class="header-top-pink">
           <h1><%= @party.accepted_movies.first.title %></h1>
         </div>
@@ -15,27 +15,39 @@
       </div>
     </div>
   </div>
-  <div class="movie-detail p-4 ">
-    <div class="movie-detail-div ">
-      <h1 class="text-white text-start pl-3" ><%= @party.accepted_movies.first.title %></h1>
-    </div>
+  <div class="movie-detail px-4 pb-2 ">
     <div class="movie-detail-div2 p-2">
-      <div class="rating">
-        <span class="star"><i class="fa-solid fa-star"></i></span>
-        <h3 class=""><%= @party.accepted_movies.first.rating %>/10</h3>
-      </div>
-      <p class="text-white text-start mt-2">YEAR : <%= @party.accepted_movies.first.title %></p>
-      <p class="text-white text-start">OVERVIEW : <%= @party.accepted_movies.first.overview %></p>
-      <div class="tinder--card-director text-white mt-3">
-        <p>DIRECTOR : <%= @movie.director %></p>
+      <div class="d-flex justify-content-between">
+        <div>
+          <div class="d-flex align-items-center">
+            <p class="match-details2 text-white text-start me-3">YEAR  :</p>
+            <p class="text-white text-start mt-2">  <%= @party.accepted_movies.first.year %></p>
+          </div>
+          <div class="d-flex align-items-center">
+            <p class="match-details2 text-white text-start me-3">RUNTIME  :</p>
+            <p class="text-white text-start mt-2 mr-2">  <%= @party.accepted_movies.first.runtime %> mins </p>
+          </div>
+        </div>
+        <div class="rating align-self-start mt-2">
+          <span class="star"><i class="fa-solid fa-star"></i></span>
+          <h3 class=""><%= @party.accepted_movies.first.rating %>%</h3>
+        </div>
       </div>
       <div class="tinder--card-cast text-white mt-3">
-        <p>CAST : <%= @movie.cast %></p>
+        <p class="match-details">OVERVIEW</p>
       </div>
-     
+      <p class="text-white text-start"><%= @party.accepted_movies.first.overview %></p>
+      <div class="tinder--card-director text-white mt-3">
+        <p class="match-details">DIRECTOR</p>
+        <p><%= @movie.director %></p>
+      </div>
+      <div class="tinder--card-cast text-white my-3 pb-3">
+        <p class="match-details">CAST</p>
+        <%= @movie.cast %></p>
     </div>
   </div>
-  <%# <div class="text-center">
+</div>
+<%# <div class="text-center">
     <iframe width="auto" height="auto" src="https://www.youtube.com/embed/crhL1eOjf4U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </div> %>
 </div>
