@@ -12,9 +12,9 @@
     <div class="title-box">
       <div class="poster-img text-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @movie.poster_url %>)">
         <% if @movie.netflix_url %>
-          <div>
-            <%= link_to @movie.netflix_url, class: "netflix_url, mt-4 mx-4 flex-grow-0 text-decoration-none play btn" do %>
-              <i class="fa-solid fa-circle-play"></i>
+          <div class="url">
+            <%= link_to @movie.netflix_url, class: "netflix_url, text-decoration-none play btn" do %>
+              <i class="fa-solid fa-circle-play url-button"></i>
             <% end %>
           </div>
       </div>
