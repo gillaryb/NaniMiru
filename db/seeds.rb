@@ -25,7 +25,7 @@ end
 
 puts "adding Movies"
 
-(1..5).each do |page_num|
+(1..3).each do |page_num|
 url = "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV["TMDB_API_KEY"]}&language=en-US&page=#{page_num}"
 response = JSON.parse(URI.open(url).read)
 response['results'].each do |movie_hash|
@@ -45,14 +45,18 @@ response['results'].each do |movie_hash|
         else director_name = "Alan Smithee"
         end
       end
+    runtime_url = "https://api.themoviedb.org/3/movie/#{id}?api_key=#{ENV["TMDB_API_KEY"]}"
+    runtime_response = JSON.parse(URI.open(runtime_url).read)
+
       movie = Movie.create!(
         poster_url: "https://image.tmdb.org/t/p/w500" + movie_hash['poster_path'],
-        rating: rand(7..9),
+        rating: movie_hash['vote_average'] * 10,
         title: movie_hash['title'],
         overview: movie_hash['overview'],
         year: Date.parse(release_date).strftime("%Y"),
         cast: castnames.join(", "),
-        director: director_name
+        director: director_name,
+        runtime: runtime_response['runtime']
       )
       #create MovieGenres here
       movie_hash['genre_ids'].each do |genre_id|
