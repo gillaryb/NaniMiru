@@ -21,24 +21,24 @@
         <div>
           <div class="d-flex align-items-center">
             <p class="match-details2 text-white text-start me-3">YEAR  :</p>
-            <p class="text-white text-start mt-2">  <%= @movie.year %></p>
+            <p class="text-white text-start ">  <%= @movie.year %></p>
           </div>
           <div class="d-flex align-items-center">
             <p class="match-details2 text-white text-start me-3">RUNTIME  :</p>
-            <p class="text-white text-start mt-2 mr-2">  <%= @movie.runtime %> mins </p>
+            <p class="text-white text-start">  <%= @movie.runtime %> mins </p>
           </div>
         </div>
-        <div class="rating align-self-start mt-2">
+        <div class="rating align-self-start">
           <span class="star"><i class="fa-solid fa-star"></i></span>
           <h3 class=""><%= @movie.rating %>%</h3>
         </div>
       </div>
       <div class="tinder--card-cast text-white mt-3">
-    <% if @movie.netflix_url %>
-      <div>
-        <%= link_to "watch on netflix", @movie.netflix_url, class: "netflix_url"  %>
-      </div>
-    <% end %>
+        <% if @movie.netflix_url %>
+          <div>
+            <%= link_to "watch on netflix", @movie.netflix_url, class: "netflix_url"  %>
+          </div>
+        <% end %>
         <p class="match-details">OVERVIEW</p>
       </div>
       <p class="text-white text-start"><%= @movie.overview %></p>
