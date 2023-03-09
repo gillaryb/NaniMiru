@@ -10,10 +10,13 @@ export default class extends Controller {
       var hammertime = new Hammer(el);
 
       hammertime.on('pan', (event) => {
+        // if (event.target != el) return
+
         el.classList.add('moving');
       });
 
       hammertime.on('pan', (event) => {
+        // if (event.target != el) return
         if (event.deltaX === 0) return;
         if (event.center.x === 0 && event.center.y === 0) return;
 
@@ -24,10 +27,12 @@ export default class extends Controller {
         var yMulti = event.deltaY / 80;
         var rotate = xMulti * yMulti;
 
-        event.target.style.transform = 'translate(' + event.deltaX + 'px, ' + event.deltaY + 'px) rotate(' + rotate + 'deg)';
+        el.style.transform = 'translate(' + event.deltaX + 'px, ' + event.deltaY + 'px) rotate(' + rotate + 'deg)';
       });
 
       hammertime.on('panend', (event) => {
+        // if (event.target != el) return
+
         el.classList.remove('moving');
         this.containerTarget.classList.remove('tinder_love');
         this.containerTarget.classList.remove('tinder_nope');
@@ -35,10 +40,10 @@ export default class extends Controller {
         var moveOutWidth = document.body.clientWidth;
         var keep = Math.abs(event.deltaX) < 80 || Math.abs(event.velocityX) < 0.5;
 
-        event.target.classList.toggle('removed', !keep);
+        el.classList.toggle('removed', !keep);
 
         if (keep) {
-          event.target.style.transform = '';
+          el.style.transform = '';
         } else {
           this.#hideButtons()
           var endX = Math.max(Math.abs(event.velocityX) * moveOutWidth, moveOutWidth);
@@ -52,7 +57,7 @@ export default class extends Controller {
           const movieId = event.target.dataset.movieId
           this.#submit(url, movieId, event.deltaX > 0)
 
-          event.target.style.transform = 'translate(' + toX + 'px, ' + (toY + event.deltaY) + 'px) rotate(' + rotate + 'deg)';
+          el.style.transform = 'translate(' + toX + 'px, ' + (toY + event.deltaY) + 'px) rotate(' + rotate + 'deg)';
           this.#initCards();
         }
       });
@@ -83,6 +88,10 @@ export default class extends Controller {
 
   #initCards(card, index) {
     var newCards = document.querySelectorAll('.tinder--card:not(.removed)');
+    if (newCards.length == 0 ) {
+      window.location.replace(window.location.pathname.replace("/movies",""))
+    }
+
     document.querySelectorAll('.tinder--card + :not(.removed)')[0].classList.remove('d-none');
 
     newCards.forEach((card, index) => {

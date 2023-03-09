@@ -27,6 +27,11 @@ class PartiesController < ApplicationController
   def show
     @party = Party.find(params[:id])
     authorize @party
+
+    if @party.has_match?
+      @movie = @party.accepted_movies.first
+      render "swipes/show"
+    end
   end
 
   def swipe
