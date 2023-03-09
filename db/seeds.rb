@@ -24,6 +24,62 @@ genres["genres"].each do |info|
 end
 
 puts "adding Movies"
+Movie.create!(
+  poster_url: "https://www.themoviedb.org/t/p/w1280/fDiQSv2cnMnqiDzhpA0mQu8T9sq.jpg",
+  rating: 74,
+  title: "Army of Darkness",
+  overview: "A sardonic hardware store clerk is accidentally transported to 1300 A.D., where he must retrieve the Necronomicon and battle an army of the dead so he can return home.",
+  year: 1992,
+  cast: "Bruce Campbell, Embeth Davitz, Marcus Gilbert",
+  director: "Sam Raimi",
+  runtime: 81,
+  genres: [Genre.find_by(name: "Horror"), Genre.find_by(name: "Action"), Genre.find_by(name: "Fantasy")]
+)
+Movie.create!(
+  poster_url: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/gLTVGCtUfD80sMDkbxAiWNso7Ne.jpg",
+  rating: 53,
+  title: "Scary Movie 3",
+  overview: "In the third installment of the Scary Movie franchise, news anchorwoman Cindy Campbell has to investigate mysterious crop circles and killing video tapes, and help the President stop an alien invasion in the process.",
+  year: 2004,
+  cast: "Anna Faris, Marlon Wayans, Anthony Acker",
+  director: "Shawn Wallace",
+  runtime: 83,
+  genres: [Genre.find_by(name: "Horror"), Genre.find_by(name: "Action"), Genre.find_by(name: "Fantasy")]
+)
+Movie.create!(
+  poster_url: "https://www.themoviedb.org/t/p/w1280/5AMQonvfJ80AluV7xy5pt0WQeII.jpg",
+  rating: 74,
+  title: "Shaun of the Dead",
+  overview: "Shaun lives a supremely uneventful life, which revolves around his girlfriend, his mother, and, above all, his local pub. This gentle routine is threatened when the dead return to life and make strenuous attempts to snack on ordinary Londoners.",
+  year: 2004,
+  cast: "Simon Pegg, Nick Frost, Kate Ashfield",
+  director: "Edgar Wright",
+  runtime: 75,
+  genres: [Genre.find_by(name: "Horror"), Genre.find_by(name: "Action"), Genre.find_by(name: "Fantasy")]
+)
+Movie.create!(
+  poster_url: "https://www.themoviedb.org/t/p/w1280/wApZP55Ey3qZBjbmCu5vL3lHdpl.jpg",
+  rating: 49,
+  title: "The VelociPastor ",
+  overview: "After losing his parents, a priest travels to China, where he inherits a mysterious ability to turn into a dinosaur. At first horrified by this new power, a prostitute convinces him to fight crime. And ninjas.",
+  year: 2018,
+  cast: "Claire Hsu, Alyssa Kempinski, Greg Cohan",
+  director: "Brendan Steere",
+  runtime: 75,
+  genres: [Genre.find_by(name: "Horror"), Genre.find_by(name: "Action"), Genre.find_by(name: "Fantasy")]
+)
+Movie.create!(
+  poster_url: "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/dUkAmAyPVqubSBNRjRqCgHggZcK.jpg",
+  rating: 78,
+  title: "Zombieland ",
+  overview: "Columbus has made a habit of running from what scares him. Tallahassee doesn't have fears. If he did, he'd kick their ever-living ass. In a world overrun by zombies, these two are perfectly evolved survivors. But now, they're about to stare down the most terrifying prospect of all: each other.",
+  year: 2009,
+  cast: "Woody Harrelson, Jesse Eisenberg, Emma Stone",
+  director: "Ruben Fleischer",
+  runtime: 89,
+  genres: [Genre.find_by(name: "Horror"), Genre.find_by(name: "Action"), Genre.find_by(name: "Fantasy")]
+)
+
 
 (1..3).each do |page_num|
 url = "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV["TMDB_API_KEY"]}&language=en-US&page=#{page_num}"
@@ -70,17 +126,17 @@ unwanted_genre = ["Adventure", "History", "Music", "TV Movie", "Western"]
 Genre.where(name: unwanted_genre ).destroy_all
 Genre.where(name: "Science Fiction").update_all(name: "Sci-Fi")
 
-puts "getting the parties started"
-gilarys = Party.create!(name: "We <3 The Godfather")
+# puts "getting the parties started"
+# gilarys = Party.create!(name: "We <3 The Godfather")
 
-puts "populating them"
-Membership.create!(party: gilarys, user: gilary)
-Membership.create!(party: gilarys, user: anri)
-Membership.create!(party: gilarys, user: chieri)
-Membership.create!(party: gilarys, user: jim)
+# puts "populating them"
+# Membership.create!(party: gilarys, user: gilary)
+# Membership.create!(party: gilarys, user: anri)
+# Membership.create!(party: gilarys, user: chieri)
+# Membership.create!(party: gilarys, user: jim)
 
-puts "making a match"
-Swipe.create!(party: gilarys, user: gilary, movie: Movie.first, status: 1)
-Swipe.create!(party: gilarys, user: chieri, movie: Movie.first, status: 1)
-Swipe.create!(party: gilarys, user: anri, movie: Movie.first, status: 1)
+# puts "making a match"
+# Swipe.create!(party: gilarys, user: gilary, movie: Movie.first, status: 1)
+# Swipe.create!(party: gilarys, user: chieri, movie: Movie.first, status: 1)
+# Swipe.create!(party: gilarys, user: anri, movie: Movie.first, status: 1)
 # Swipe.create!(party: gilarys, user: jim, movie: Movie.first, status: 1)

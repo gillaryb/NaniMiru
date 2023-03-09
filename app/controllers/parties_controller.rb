@@ -15,10 +15,8 @@ class PartiesController < ApplicationController
     authorize @party
     if @party.save
       Membership.create(user: current_user, party: @party)
-
       redirect_to party_path(@party)
     else
-
       @genres = Genre.all.order(name: :asc)
       render :new, status: :unprocessable_entity
     end
@@ -27,6 +25,11 @@ class PartiesController < ApplicationController
   def show
     @party = Party.find(params[:id])
     authorize @party
+
+    if @party.has_match?
+      @movie = @party.accepted_movies.first
+      render "swipes/show"
+    end
   end
 
   def swipe
