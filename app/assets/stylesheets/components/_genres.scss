@@ -12,7 +12,7 @@
 }
 
 .tag-selector + label {
-  background-color: #10142882;
+  background-color: #eeeff41f;
   text-align: center;
   cursor: pointer;
   display: inline-block;
@@ -24,11 +24,13 @@
   line-height: 1;
   padding: 10px 0;
   height: 38px;
-  // width: 175px;
+  box-shadow: 3px 4px 3px #ffffff99;
+  text-shadow: 1px 2px 3px #090909;
 }
 
+
 .tag-selector:checked + label {
-  background-color: #d0ca79c2;
+  background-color: #111428;
   color: white;
 }
 
