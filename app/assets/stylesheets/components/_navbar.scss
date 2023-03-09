@@ -8,7 +8,11 @@
   flex-grow: 0;
 }
 
-
+element.style{
+  position: absolute;
+  left: 32px;
+  top: 16px;
+}
 
 .nanilogo {
   width: 115px;
