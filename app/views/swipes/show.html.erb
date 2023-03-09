@@ -2,10 +2,9 @@
   <div class="match-top">
     <div class="header-top">
       <div class="header-top-text mb-2">
-        <h1 class="title-white mt-3">YOUR MATCH</h1>
-        <div class="header-top-pink">
-          <h1><%= @movie.title %></h1>
-        </div>
+        <h1 class="text-white mt-3">
+          It's a <span style="color: #f30bb2;">match</span>!!!
+        </h1>
       </div>
     </div>
   </div>
@@ -21,14 +20,14 @@
         <div>
           <div class="d-flex align-items-center">
             <p class="match-details2 text-white text-start me-3">YEAR  :</p>
-            <p class="text-white text-start ">  <%= @movie.year %></p>
+            <p class="text-white text-start mt-2">  <%= @movie.year %></p>
           </div>
           <div class="d-flex align-items-center">
             <p class="match-details2 text-white text-start me-3">RUNTIME  :</p>
-            <p class="text-white text-start">  <%= @movie.runtime %> mins </p>
+            <p class="text-white text-start mt-2 mr-2">  <%= @movie.runtime %> mins </p>
           </div>
         </div>
-        <div class="rating align-self-start">
+        <div class="rating align-self-start mt-2">
           <span class="star"><i class="fa-solid fa-star"></i></span>
           <h3 class=""><%= @movie.rating %>%</h3>
         </div>
