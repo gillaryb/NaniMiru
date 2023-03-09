@@ -9,11 +9,13 @@
         <div class="tinder--card" data-swiper-target="card" data-url="<%= party_swipes_path(@party, @swipe) %>" data-movie-id="<%= movie.id %>">
           <%= image_tag movie.poster_url %>
           <div class="move-details bg-white position-relative">
-            <p><%= movie.title %>
-              <span>
-                (<%= movie.year %>)
-              </span>
-            </p>
+            <div class="movie-title-font">
+              <p><%= movie.title %>
+                <span>
+                  (<%= movie.year %>)
+                </span>
+              </p>
+            </div>
             <div class="movie-details-rating">
               <p><%= movie.rating %>%</p>
             </div>
@@ -44,11 +46,16 @@
             <% end %>
           </div>
           <div class="tinder--card-details p-3">
-            <div class="rating">
+            <div class="rating m-0">
               <span class="star"><i class="fa-solid fa-star"></i></span>
-              <p class=""><%= movie.rating %>/10</p>
+              <p class="m-0"><%= movie.rating %>%</p>
               <div class="year-absolute">
-                <p> <%= movie.year %></p>
+                <div>
+                  <p class="m-0 year-ptag"> <%= movie.year %></p>
+                </div>
+                <div class="d-flex align-items-center">
+                  <p class="text-white text-start m-0"><%= movie.runtime %> mins </p>
+                </div>
               </div>
             </div>
           </div>
