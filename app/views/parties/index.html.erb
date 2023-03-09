@@ -9,12 +9,17 @@
   <div class="on-going-parties p-2">
     <% @parties.each do |party| %>
       <div class="notification d-flex gap-3">
-        <div><i class="fa-solid fa-film"></i></div>
+        <div><i class="fa-solid fa-ticket"></i></div>
         <div class="notification-content text-white">
-          <div>Party name : <%= link_to party.name, party_path(party) , class: "text-white"  %></div>
+          <div><%= link_to party.name, party_path(party) , class: "text-white"  %></div>
           <div class="mt-1 pt-1">
             <% party.accepted_movies.each do |movie| %>
-              <div>Matched movie : <%= movie.title %></div>
+              <div class="d-flex gap-3">
+                <i class="fa-solid fa-film"></i>
+                <p>
+                  <%= movie.title %>
+                </p>
+              </div>
             <% end %>
           </div>
         </div>
