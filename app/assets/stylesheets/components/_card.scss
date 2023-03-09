@@ -4,12 +4,14 @@
 }
 
 .poster-img {
-height: 637px;
-width: 364px;
+height: 60vh;
+width: 94vw;
 border-radius: 20px;
 display: flex;
 position: relative;
 border: 2px solid white;
+background-size: cover;
+background-position: 50% 50%;
 
 }
 
