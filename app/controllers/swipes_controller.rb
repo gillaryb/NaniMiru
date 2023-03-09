@@ -18,7 +18,7 @@ class SwipesController < ApplicationController
 
     respond_to do |format|
       if @swipe.save
-        if @party.has_match?
+        if @party.has_match? && @party.users.count > 1
           format.html { redirect_to swipe_path(@swipe) }
           format.json { render json: { redirect_url: swipe_path(@swipe) }.to_json }
         else
