@@ -1,10 +1,10 @@
 <div class="container-top h-100 mt-3">
   <div class="match-top">
     <div class="header-top">
-      <div class="header-top-text">
-        <h1 class="title-white">Your Match</h1>
+      <div class="header-top-text mb-2">
+        <h1 class="title-white mt-3">Your movie</h1>
         <div class="header-top-pink">
-          <h1>!!!</h1>
+          <h1><%= @party.accepted_movies.first.title %></h1>
         </div>
       </div>
     </div>
@@ -12,13 +12,6 @@
   <div class="container text-center">
     <div class="title-box">
       <div class="poster-img text-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @party.accepted_movies.first.poster_url %>)">
-        <div class="movie-div p-4">
-          <h3 class="movie-title"><%= @party.accepted_movies.first.title %></h3>
-          <div class="rating">
-            <span class="star"><i class="fa-solid fa-star"></i></span>
-            <h3 class=""><%= @party.accepted_movies.first.rating %>/10</h3>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -31,8 +24,15 @@
         <span class="star"><i class="fa-solid fa-star"></i></span>
         <h3 class=""><%= @party.accepted_movies.first.rating %>/10</h3>
       </div>
-      <p class="text-white text-start mt-2">YEAR : <%= @party.accepted_movies.first.year %></p>
+      <p class="text-white text-start mt-2">YEAR : <%= @party.accepted_movies.first.title %></p>
       <p class="text-white text-start">OVERVIEW : <%= @party.accepted_movies.first.overview %></p>
+      <div class="tinder--card-director text-white mt-3">
+        <p>DIRECTOR : <%= @movie.director %></p>
+      </div>
+      <div class="tinder--card-cast text-white mt-3">
+        <p>CAST : <%= @movie.cast %></p>
+      </div>
+     
     </div>
   </div>
   <%# <div class="text-center">
