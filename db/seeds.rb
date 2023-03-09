@@ -74,6 +74,7 @@ Movie.create!(
   title: "Zombieland ",
   overview: "Columbus has made a habit of running from what scares him. Tallahassee doesn't have fears. If he did, he'd kick their ever-living ass. In a world overrun by zombies, these two are perfectly evolved survivors. But now, they're about to stare down the most terrifying prospect of all: each other.",
   year: 2009,
+  netflix_url: "https://www.netflix.com/watch/70123542?trackId=255824129&tctx=0%2C0%2CNAPA%40%40%7C09e4b1a4-0b2e-47ec-8e32-bd7b268a5c2e-61220094_titles%2F1%2F%2Fzomb%2F0%2F0%2CNAPA%40%40%7C09e4b1a4-0b2e-47ec-8e32-bd7b268a5c2e-61220094_titles%2F1%2F%2Fzomb%2F0%2F0%2Cunknown%2C%2C09e4b1a4-0b2e-47ec-8e32-bd7b268a5c2e-61220094%7C1%2CtitlesResults%2C%2CVideo%3A70123542",
   cast: "Woody Harrelson, Jesse Eisenberg, Emma Stone",
   director: "Ruben Fleischer",
   runtime: 89,
