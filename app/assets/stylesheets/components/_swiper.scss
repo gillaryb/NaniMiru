@@ -101,9 +101,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Poppins', sans-serif;
+
   p {
     padding: 0;
-
   }
 }
 
@@ -180,6 +181,10 @@
   right: 0;
 }
 
+.year-ptag{
+  padding-left: 34px;
+}
+
 .tinder--like--remove{
   display: flex;
   justify-content: center;
@@ -254,9 +259,11 @@
   text-align: center;
   display: inline-block;
   margin-bottom: 8px;
+  width: 34%;
 
   p {
     font-size: 15px;
+    margin: 8px;
   }
 }
 
@@ -319,4 +326,8 @@ background: #0f1428db;
     margin-top: -0.7em;
     font-size: 3em;
   }
+}
+
+.movie-title-font {
+  font-family: 'Poppins', sans-serif;
 }

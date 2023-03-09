@@ -1,39 +1,24 @@
 <div class="container text-white mt-2">
   <div class="genre-top">
     <div class="header-top">
-        <div class="header-top-pink mt-2">
-          <h1>Parties</h1>
-        </div>
+      <div class="header-top-pink mt-2">
+        <h1>Parties</h1>
+      </div>
     </div>
   </div>
-
   <div class="on-going-parties p-2">
     <% @parties.each do |party| %>
       <div class="notification d-flex gap-3">
-        <p><i class="fa-solid fa-film"></i></p>
+        <div><i class="fa-solid fa-film"></i></div>
         <div class="notification-content text-white">
-          <p>Party name : <%= link_to party.name, party_path(party) , class: "text-white"  %></p>
-          <% party.accepted_movies.each do |movie| %>
-            <p>Matched movie : <%= movie.title %></p>
-          <% end %>
+          <div>Party name : <%= link_to party.name, party_path(party) , class: "text-white"  %></div>
+          <div class="mt-1 pt-1">
+            <% party.accepted_movies.each do |movie| %>
+              <div>Matched movie : <%= movie.title %></div>
+            <% end %>
+          </div>
         </div>
       </div>
     <% end %>
-    <%# <div class="notification-actions">
-    <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
-    <a href="#">Delete <i class="far fa-trash-alt"></i></a>
-  </div> %>
   </div>
-  <%# <div class="notification">
-  <img src='https://kitt.lewagon.com/placeholder/users/Eschults' class="avatar-large"/>
-  <div class="notification-content">
-    <p><small>9th January</small></p>
-    <p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit.</p>
-  </div>
-
-  <div class="notification-actions">
-    <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
-    <a href="#">Delete <i class="far fa-trash-alt"></i></a>
-  </div>
-</div> %>
 </div>
