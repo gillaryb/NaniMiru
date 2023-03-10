@@ -2,7 +2,13 @@
   <div style="position: absolute; left: 5px;">
     <% if current_user.present? %>
       <div class="d-flex ms-2 mt-2">
-        <%= image_tag current_user.photo_url, class: "avatar", 'aria-haspopup': true, 'aria-expanded': false %>
+        <% if @party&.id %>
+          <%= link_to party_path(@party) do  %>
+            <%= image_tag current_user.photo_url, class: "avatar",'aria-haspopup': true, 'aria-expanded': false %>
+          <% end %>
+        <% else %>
+          <%= image_tag current_user.photo_url, class: "avatar",'aria-haspopup': true, 'aria-expanded': false %>
+        <% end %>
         <% if @party %>
           <% @party.users.where.not(id: current_user).each do |user| %>
             <%= image_tag user.photo_url, class: "avatar", 'aria-haspopup': true, 'aria-expanded': false, style: "margin-left: -16px" %>
