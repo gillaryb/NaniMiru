@@ -287,8 +287,9 @@
 
 .netflix_url{
 color: white;
-border:1px solid white;
-position: absolute;
+// border:1px solid white;
+// position: absolute;
+text-shadow: 3px 1px 3px #0e0000;
 }
 
 .url-button{
@@ -341,4 +342,8 @@ background: #0f1428db;
 
 .movie-title-font {
   font-family: 'Poppins', sans-serif;
+}
+
+.watch-now p{
+  font-size: 16px
 }
