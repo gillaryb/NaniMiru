@@ -145,6 +145,7 @@ export default class extends Controller {
     .then(response => response.json())
     .then((data) => {
       console.log(data)
+      console.log('hiiiii')
       if(data.redirect_url) {
         window.location = data.redirect_url
       }

@@ -19,8 +19,8 @@ class SwipesController < ApplicationController
     respond_to do |format|
       if @swipe.save
         if @party.has_match? && @party.users.count > 1
-          format.html { redirect_to swipe_path(@swipe) }
-          format.json { render json: { redirect_url: swipe_path(@swipe) }.to_json }
+          format.html { redirect_to swipe_path(@party.swipes.find_by(movie: @party.accepted_movies.first)) }
+          format.json { render json: { redirect_url: swipe_path(@party.swipes.find_by(movie: @party.accepted_movies.first)) }.to_json }
         else
           format.html { redirect_to party_movies_path(@party) }
           format.json { head :ok }
