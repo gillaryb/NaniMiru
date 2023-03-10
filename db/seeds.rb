@@ -33,7 +33,7 @@ Movie.create!(
   cast: "Bruce Campbell, Embeth Davitz, Marcus Gilbert",
   director: "Sam Raimi",
   runtime: 81,
-  genres: [Genre.find_by(name: "Horror"), Genre.find_by(name: "Action"), Genre.find_by(name: "Fantasy")]
+  genres: [Genre.find_by(name: "Horror"), Genre.find_by(name: "Comedy"), Genre.find_by(name: "Fantasy")]
 )
 Movie.create!(
   poster_url: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/gLTVGCtUfD80sMDkbxAiWNso7Ne.jpg",
@@ -44,29 +44,7 @@ Movie.create!(
   cast: "Anna Faris, Marlon Wayans, Anthony Acker",
   director: "Shawn Wallace",
   runtime: 83,
-  genres: [Genre.find_by(name: "Horror"), Genre.find_by(name: "Action"), Genre.find_by(name: "Fantasy")]
-)
-Movie.create!(
-  poster_url: "https://www.themoviedb.org/t/p/w1280/5AMQonvfJ80AluV7xy5pt0WQeII.jpg",
-  rating: 74,
-  title: "Shaun of the Dead",
-  overview: "Shaun lives a supremely uneventful life, which revolves around his girlfriend, his mother, and, above all, his local pub. This gentle routine is threatened when the dead return to life and make strenuous attempts to snack on ordinary Londoners.",
-  year: 2004,
-  cast: "Simon Pegg, Nick Frost, Kate Ashfield",
-  director: "Edgar Wright",
-  runtime: 75,
-  genres: [Genre.find_by(name: "Horror"), Genre.find_by(name: "Action"), Genre.find_by(name: "Fantasy")]
-)
-Movie.create!(
-  poster_url: "https://www.themoviedb.org/t/p/w1280/wApZP55Ey3qZBjbmCu5vL3lHdpl.jpg",
-  rating: 49,
-  title: "The VelociPastor ",
-  overview: "After losing his parents, a priest travels to China, where he inherits a mysterious ability to turn into a dinosaur. At first horrified by this new power, a prostitute convinces him to fight crime. And ninjas.",
-  year: 2018,
-  cast: "Claire Hsu, Alyssa Kempinski, Greg Cohan",
-  director: "Brendan Steere",
-  runtime: 75,
-  genres: [Genre.find_by(name: "Horror"), Genre.find_by(name: "Action"), Genre.find_by(name: "Fantasy")]
+  genres: [Genre.find_by(name: "Horror"), Genre.find_by(name: "Comedy"), Genre.find_by(name: "Fantasy")]
 )
 Movie.create!(
   poster_url: "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/dUkAmAyPVqubSBNRjRqCgHggZcK.jpg",
@@ -78,9 +56,30 @@ Movie.create!(
   cast: "Woody Harrelson, Jesse Eisenberg, Emma Stone",
   director: "Ruben Fleischer",
   runtime: 89,
-  genres: [Genre.find_by(name: "Horror"), Genre.find_by(name: "Action"), Genre.find_by(name: "Fantasy")]
+  genres: [Genre.find_by(name: "Horror"), Genre.find_by(name: "Comedy"), Genre.find_by(name: "Fantasy")]
 )
-
+Movie.create!(
+  poster_url: "https://www.themoviedb.org/t/p/w1280/wApZP55Ey3qZBjbmCu5vL3lHdpl.jpg",
+  rating: 49,
+  title: "The VelociPastor ",
+  overview: "After losing his parents, a priest travels to China, where he inherits a mysterious ability to turn into a dinosaur. At first horrified by this new power, a prostitute convinces him to fight crime. And ninjas.",
+  year: 2018,
+  cast: "Claire Hsu, Alyssa Kempinski, Greg Cohan",
+  director: "Brendan Steere",
+  runtime: 75,
+  genres: [Genre.find_by(name: "Horror"), Genre.find_by(name: "Comedy"), Genre.find_by(name: "Fantasy")]
+)
+Movie.create!(
+  poster_url: "https://www.themoviedb.org/t/p/w1280/5AMQonvfJ80AluV7xy5pt0WQeII.jpg",
+  rating: 74,
+  title: "Shaun of the Dead",
+  overview: "Shaun lives a supremely uneventful life, which revolves around his girlfriend, his mother, and, above all, his local pub. This gentle routine is threatened when the dead return to life and make strenuous attempts to snack on ordinary Londoners.",
+  year: 2004,
+  cast: "Simon Pegg, Nick Frost, Kate Ashfield",
+  director: "Edgar Wright",
+  runtime: 75,
+  genres: [Genre.find_by(name: "Horror"), Genre.find_by(name: "Comedy"), Genre.find_by(name: "Fantasy")]
+)
 
 (1..3).each do |page_num|
 url = "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV["TMDB_API_KEY"]}&language=en-US&page=#{page_num}"
