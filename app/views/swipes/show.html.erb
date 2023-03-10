@@ -17,40 +17,38 @@
               <i class="fa-solid fa-circle-play url-button"></i>
             <% end %>
           </div>
-      </div>
-    </div>
-  </div>
-  <div class="movie-detail px-4 pb-2 ">
-    <div class="movie-detail-div2 p-2">
-      <div class="d-flex justify-content-between mt-2">
-        <div>
-          <div class="d-flex align-items-center">
-            <p class="match-details2 text-white text-start me-3">YEAR  :</p>
-            <p class="text-white text-start mt-2">  <%= @movie.year %></p>
-          </div>
-          <div class="d-flex align-items-center">
-            <p class="match-details2 text-white text-start me-3">RUNTIME  :</p>
-            <p class="text-white text-start mt-2 mr-2">  <%= @movie.runtime %> mins </p>
-          </div>
-        </div>
-        <div class="rating align-self-start mt-2">
-          <span class="star"><i class="fa-solid fa-star"></i></span>
-          <h3 class=""><%= @movie.rating %>%</h3>
         </div>
       </div>
-      <div class="tinder--card-cast text-white mt-3">
-        <% end %>
-        <p class="match-details">OVERVIEW</p>
-      </div>
-      <p class="text-white text-start"><%= @movie.overview %></p>
-      <div class="tinder--card-director text-white mt-3">
-        <p class="match-details">DIRECTOR</p>
-        <p><%= @movie.director %></p>
-      </div>
-      <div class="tinder--card-cast text-white my-3 pb-3">
-        <p class="match-details">CAST</p>
-        <%= @movie.cast %></p>
     </div>
+    <div class="movie-detail px-4 pb-2 ">
+      <div class="movie-detail-div2 p-2">
+        <div class="d-flex justify-content-between mt-2">
+          <div>
+            <div class="d-flex align-items-center">
+              <p class="match-details2 text-white text-start me-3">YEAR  :</p>
+              <p class="text-white text-start mt-2">  <%= @movie.year %></p>
+            </div>
+            <div class="d-flex align-items-center">
+              <p class="match-details2 text-white text-start me-3">RUNTIME  :</p>
+              <p class="text-white text-start mt-2 mr-2">  <%= @movie.runtime %> mins </p>
+            </div>
+          </div>
+          <div class="rating align-self-start mt-2">
+            <span class="star"><i class="fa-solid fa-star"></i></span>
+            <h3 class=""><%= @movie.rating %>%</h3>
+          </div>
+        </div>
+      <% end %>
+      <p class="match-details">OVERVIEW</p>
+    </div>
+    <p class="text-white text-start"><%= @movie.overview %></p>
+    <div class="tinder--card-director text-white mt-3">
+      <p class="match-details">DIRECTOR</p>
+      <p><%= @movie.director %></p>
+    </div>
+    <div class="tinder--card-cast text-white my-3 pb-3">
+      <p class="match-details">CAST</p>
+      <%= @movie.cast %></p>
   </div>
 </div>
 </div>
