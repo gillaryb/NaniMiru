@@ -2,7 +2,8 @@
     <h1><img width="30" height="30"alt="NaniMiruLogo" src="https://user-images.githubusercontent.com/111226617/224600211-7e963167-4ccb-4a19-ae5d-6a9f3130b98f.png"> NaniMiru</h1>
 </div>
 
- A [le wagon coding bootcamp's](https://www.lewagon.com) final project that allows a group of people to easily and quickly come to consensus which movie to watch
+ A [le wagon coding bootcamp's](https://www.lewagon.com) final project that allows a group of people to easily and quickly come to consensus which movie to watch.
+ [See more](https://www.nanimiru.baby/)
 
  <div>
 <img width="296" height="636" alt="NaniMiru(2)" src="https://user-images.githubusercontent.com/111226617/224598182-c28d4fcd-0fe3-49a4-87cc-3d6b632087b0.png">
