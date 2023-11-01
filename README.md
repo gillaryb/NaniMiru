@@ -2,9 +2,11 @@
     <h1><img width="30" height="30"alt="NaniMiruLogo" src="https://user-images.githubusercontent.com/111226617/224600211-7e963167-4ccb-4a19-ae5d-6a9f3130b98f.png"> NaniMiru</h1>
 </div>
 
- A [le wagon coding bootcamp's](https://www.lewagon.com) final project that allows a group of people to easily and quickly come to consensus which movie to watch.
+ A [le wagon coding bootcamp's](https://www.lewagon.com)  final project addresses the common struggle of groups deciding on a movie. This innovative app efficiently gathers individual preferences, utilizing advanced matching technology to save time and ensure a movie resonates with everyone. Additionally, if the group unanimously agrees on a movie, the app allows seamless playback on any preferred streaming site, enhancing the overall viewing experience.
  [See more](https://www.nanimiru.baby/)
 
+[Le Wagonコーディングブートキャンプ](https://www.lewagon.com)の最終プロジェクトは、映画を選ぶ際のグループの一般的なジレンマに対処しています。この革新的なアプリケーションは、各個人の意見を効率的に収集し、高度なマッチングテクノロジーを利用して時間を節約し、選択された映画が全員の多様な興味に合致することを確認します。さらに、グループ全体が同じ映画に一致した場合、アプリケーションは好きなストリーミングサイトでシームレスに再生できるオプションを提供し、全体の視聴体験を向上させます
+[続きを見る](https://www.nanimiru.baby/)
  <div>
 <img width="296" height="636" alt="NaniMiru(2)" src="https://user-images.githubusercontent.com/111226617/224598182-c28d4fcd-0fe3-49a4-87cc-3d6b632087b0.png">
 <img width="296" height="636" alt="NaniMiru(3)" src="https://user-images.githubusercontent.com/111226617/224598197-a4c3e944-530b-48e4-ba8a-8d31b5e57def.png">
